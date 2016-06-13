@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		4386E6941D0F31AB0075B96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E6931D0F31AB0075B96E /* main.m */; };
 		4386E6971D0F31AB0075B96E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E6961D0F31AB0075B96E /* AppDelegate.m */; };
-		4386E69A1D0F31AB0075B96E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E6991D0F31AB0075B96E /* ViewController.m */; };
 		4386E69D1D0F31AB0075B96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4386E69B1D0F31AB0075B96E /* Main.storyboard */; };
 		4386E69F1D0F31AB0075B96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4386E69E1D0F31AB0075B96E /* Assets.xcassets */; };
 		4386E6A21D0F31AB0075B96E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4386E6A01D0F31AB0075B96E /* LaunchScreen.storyboard */; };
+		9086C89D1D0F47F30008C532 /* singInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C89C1D0F47F30008C532 /* singInViewController.m */; };
+		9086C8A01D0F484D0008C532 /* welcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C89F1D0F484D0008C532 /* welcomeScreenViewController.m */; };
+		9086C8A31D0F4E660008C532 /* LocationClueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C8A21D0F4E660008C532 /* LocationClueViewController.m */; };
+		9086C8A61D0F4F6C0008C532 /* PhotoClueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C8A51D0F4F6C0008C532 /* PhotoClueViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +23,18 @@
 		4386E6931D0F31AB0075B96E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4386E6951D0F31AB0075B96E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4386E6961D0F31AB0075B96E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4386E6981D0F31AB0075B96E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4386E6991D0F31AB0075B96E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4386E69C1D0F31AB0075B96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4386E69E1D0F31AB0075B96E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4386E6A11D0F31AB0075B96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4386E6A31D0F31AB0075B96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9086C89B1D0F47F30008C532 /* singInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singInViewController.h; sourceTree = "<group>"; };
+		9086C89C1D0F47F30008C532 /* singInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singInViewController.m; sourceTree = "<group>"; };
+		9086C89E1D0F484D0008C532 /* welcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = welcomeScreenViewController.h; sourceTree = "<group>"; };
+		9086C89F1D0F484D0008C532 /* welcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = welcomeScreenViewController.m; sourceTree = "<group>"; };
+		9086C8A11D0F4E660008C532 /* LocationClueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationClueViewController.h; sourceTree = "<group>"; };
+		9086C8A21D0F4E660008C532 /* LocationClueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationClueViewController.m; sourceTree = "<group>"; };
+		9086C8A41D0F4F6C0008C532 /* PhotoClueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoClueViewController.h; sourceTree = "<group>"; };
+		9086C8A51D0F4F6C0008C532 /* PhotoClueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoClueViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +69,14 @@
 			children = (
 				4386E6951D0F31AB0075B96E /* AppDelegate.h */,
 				4386E6961D0F31AB0075B96E /* AppDelegate.m */,
-				4386E6981D0F31AB0075B96E /* ViewController.h */,
-				4386E6991D0F31AB0075B96E /* ViewController.m */,
+				9086C89B1D0F47F30008C532 /* singInViewController.h */,
+				9086C89C1D0F47F30008C532 /* singInViewController.m */,
+				9086C89E1D0F484D0008C532 /* welcomeScreenViewController.h */,
+				9086C89F1D0F484D0008C532 /* welcomeScreenViewController.m */,
+				9086C8A11D0F4E660008C532 /* LocationClueViewController.h */,
+				9086C8A21D0F4E660008C532 /* LocationClueViewController.m */,
+				9086C8A41D0F4F6C0008C532 /* PhotoClueViewController.h */,
+				9086C8A51D0F4F6C0008C532 /* PhotoClueViewController.m */,
 				4386E69B1D0F31AB0075B96E /* Main.storyboard */,
 				4386E69E1D0F31AB0075B96E /* Assets.xcassets */,
 				4386E6A01D0F31AB0075B96E /* LaunchScreen.storyboard */,
@@ -149,7 +164,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4386E69A1D0F31AB0075B96E /* ViewController.m in Sources */,
+				9086C8A01D0F484D0008C532 /* welcomeScreenViewController.m in Sources */,
+				9086C89D1D0F47F30008C532 /* singInViewController.m in Sources */,
+				9086C8A61D0F4F6C0008C532 /* PhotoClueViewController.m in Sources */,
+				9086C8A31D0F4E660008C532 /* LocationClueViewController.m in Sources */,
 				4386E6971D0F31AB0075B96E /* AppDelegate.m in Sources */,
 				4386E6941D0F31AB0075B96E /* main.m in Sources */,
 			);
@@ -300,6 +318,7 @@
 				4386E6A81D0F31AB0075B96E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

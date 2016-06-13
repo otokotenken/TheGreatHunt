@@ -1,25 +1,197 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sing In View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="singInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="please enter user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBl-Gz-VRD">
+                                <rect key="frame" x="62" y="141" width="193" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fr-qY-eX1">
+                                <rect key="frame" x="62" y="112" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="please enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PqE-k1-GDp">
+                                <rect key="frame" x="62" y="244" width="193" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR8-Lp-Zvb">
+                                <rect key="frame" x="69" y="215" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCm-jt-Sda">
+                                <rect key="frame" x="208" y="415" width="47" height="30"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <segue destination="hcC-y3-m9y" kind="modal" id="Lsf-xk-ZMO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="238" y="337"/>
+        </scene>
+        <!--Welcome Screen View Controller-->
+        <scene sceneID="2uw-fQ-f0Z">
+            <objects>
+                <viewController id="hcC-y3-m9y" customClass="welcomeScreenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qwZ-vk-sBX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Igt-5e-7nd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fb5-tw-xy8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGk-du-YU1">
+                                <rect key="frame" x="40" y="40" width="241" height="368"/>
+                                <mutableString key="text">instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction instruction </mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEL-wJ-a64">
+                                <rect key="frame" x="203" y="416" width="78" height="30"/>
+                                <state key="normal" title="Start Game"/>
+                                <connections>
+                                    <segue destination="0ny-wW-0hl" kind="modal" id="7P9-pl-8L6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nah-zR-7Au" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="337"/>
+        </scene>
+        <!--Location Clue View Controller-->
+        <scene sceneID="nWv-4M-X2a">
+            <objects>
+                <viewController id="0ny-wW-0hl" customClass="LocationClueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xpp-Bo-xTy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kxc-ya-JYt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z8c-NE-PVd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xpR-0H-ltr">
+                                <rect key="frame" x="33" y="66" width="255" height="153"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Location Clue Here: Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vq8-cM-9zC">
+                                <rect key="frame" x="27" y="235" width="261" height="201"/>
+                                <connections>
+                                    <segue destination="vcR-rB-P8R" kind="embed" id="A46-Tg-AoK"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="status label status label status label status label " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXF-tU-Xo1">
+                                <rect key="frame" x="33" y="459" width="255" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j1-iA-Cad">
+                                <rect key="frame" x="160" y="518" width="128" height="30"/>
+                                <state key="normal" title="Cheat Button"/>
+                                <connections>
+                                    <segue destination="YRU-lO-ioB" kind="modal" id="dgO-KK-EIC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zam-hs-qHh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BuF-hS-rdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="337"/>
+        </scene>
+        <!--Photo Clue View Controller-->
+        <scene sceneID="YMP-h8-aK0">
+            <objects>
+                <viewController id="YRU-lO-ioB" customClass="PhotoClueViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ikb-OY-kmn"/>
+                        <viewControllerLayoutGuide type="bottom" id="9lF-3z-79M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GXI-hz-YjO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGP-vq-1QR">
+                                <rect key="frame" x="30" y="48" width="262" height="168"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tP-dv-hJx">
+                                <rect key="frame" x="29" y="241" width="262" height="168"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZh-H5-Vsd">
+                                <rect key="frame" x="197" y="474" width="94" height="30"/>
+                                <state key="normal" title="Restart Game"/>
+                                <connections>
+                                    <segue destination="hcC-y3-m9y" kind="modal" id="VJm-Xj-HyG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKr-qS-cug">
+                                <rect key="frame" x="94" y="474" width="67" height="30"/>
+                                <state key="normal" title="Next Clue"/>
+                                <connections>
+                                    <segue destination="0ny-wW-0hl" kind="modal" id="ubi-fG-wo9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XLG-sG-bKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="337"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WMq-EC-4Jd">
+            <objects>
+                <viewController id="vcR-rB-P8R" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JyQ-uu-dck">
+                        <rect key="frame" x="0.0" y="0.0" width="261" height="201"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NsQ-Ve-dFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423.5" y="-164.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ubi-fG-wo9"/>
+        <segue reference="VJm-Xj-HyG"/>
+    </inferredMetricsTieBreakers>
 </document>
