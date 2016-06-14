@@ -13,6 +13,7 @@
 
 @interface Clue : NSObject
 
+@property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *textHint;
 @property (strong, nonatomic) UIImage *imageHint;
 
