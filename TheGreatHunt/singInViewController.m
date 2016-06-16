@@ -83,6 +83,8 @@ FIRDatabaseReference *ref;
             [alert addAction:firstAction];
             [alert addAction:secondAction];
             [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        [self performSegueWithIdentifier:@"toWelcome" sender:nil];
     }
 }
 
