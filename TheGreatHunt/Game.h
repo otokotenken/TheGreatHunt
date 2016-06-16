@@ -14,6 +14,7 @@
 
 @property(nonatomic, strong) NSArray *cluesArray;
 @property(nonatomic, strong) NSString *currentClue;
+@property (strong, nonatomic) NSString *name;
 
 +(instancetype)getInstance;
 
