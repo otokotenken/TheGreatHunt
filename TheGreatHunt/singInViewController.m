@@ -58,26 +58,12 @@ FIRDatabaseReference *ref;
 
 
 - (IBAction)signInSignUpButtonPress:(id)sender {
-        [[FIRAuth auth] signInWithEmail:@"otokonotenken@gmail.com"
-                               password:@"password"
+        [[FIRAuth auth] signInWithEmail:_userEmailInputField.text
+                               password:_passwordInputField.text
                              completion:^(FIRUser *user, NSError *error) {
                                 NSLog(@"%@, %@" ,user.description, error);
                                  [self decideSignInOrSignUp:error];
-                             }];
-//        [[FIRAuth auth]
-//         createUserWithEmail:@"otokonotenken13@gmail.com"
-//         password:@"password"
-//         completion:^(FIRUser *_Nullable user,
-//                      NSError *_Nullable error) {
-//             NSLog(@"%@, %@" ,user, error);
-//         }];
-    
-//        NSError *error;
-//        [[FIRAuth auth] signOut:&error];
-//        if (!error) {
-//            // Sign-out succeeded
-//        }
-    
+                                 }];
 }
 
 -(void)decideSignInOrSignUp :(NSError *)error {
@@ -109,4 +95,15 @@ FIRDatabaseReference *ref;
                  NSLog(@"%@, %@" ,user, error);
              }];
 }
+
+- (IBAction)signOutSwitchUser:(id)sender {
+    NSError *error;
+    [[FIRAuth auth] signOut:&error];
+        if (!error) {
+            NSLog(@"signed out  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        } else {
+            NSLog(@"%@", error);
+        }
+}
+
 @end
