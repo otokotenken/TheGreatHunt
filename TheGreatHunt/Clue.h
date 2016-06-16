@@ -20,5 +20,5 @@
 @property CLLocationCoordinate2D  locationHint;
 @property float locationHintRadius;
 
-
+-(id)initWithTextHint: (NSString *)textHint andImageHint: (NSString *)imageHint andLocationHint: (NSDictionary *)locationHint andlocationHintRadius: (NSString *)locationHintRadius;
 @end

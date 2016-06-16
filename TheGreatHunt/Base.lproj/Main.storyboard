@@ -60,11 +60,12 @@
                         <outlet property="passwordInputField" destination="PqE-k1-GDp" id="Bcb-Df-Doo"/>
                         <outlet property="signInButton" destination="GCm-jt-Sda" id="ZzN-yp-vIV"/>
                         <outlet property="userEmailInputField" destination="kBl-Gz-VRD" id="rUg-g3-eVa"/>
+                        <segue destination="hcC-y3-m9y" kind="modal" identifier="toWelcome" id="TEC-hP-f9n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="238" y="337"/>
+            <point key="canvasLocation" x="252" y="337"/>
         </scene>
         <!--Welcome Screen View Controller-->
         <scene sceneID="2uw-fQ-f0Z">
@@ -208,5 +209,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ubi-fG-wo9"/>
+        <segue reference="TEC-hP-f9n"/>
     </inferredMetricsTieBreakers>
 </document>
