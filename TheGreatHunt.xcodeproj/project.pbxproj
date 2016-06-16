@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43645D4A1D1080FE00993C32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43645D491D1080FE00993C32 /* GoogleService-Info.plist */; };
+		43645D511D108B0400993C32 /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = 43645D4C1D108B0400993C32 /* Clue.m */; };
+		43645D521D108B0400993C32 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 43645D4E1D108B0400993C32 /* Game.m */; };
+		43645D531D108B0400993C32 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 43645D501D108B0400993C32 /* User.m */; };
 		4386E6941D0F31AB0075B96E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E6931D0F31AB0075B96E /* main.m */; };
 		4386E6971D0F31AB0075B96E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4386E6961D0F31AB0075B96E /* AppDelegate.m */; };
 		4386E69D1D0F31AB0075B96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4386E69B1D0F31AB0075B96E /* Main.storyboard */; };
@@ -16,9 +20,18 @@
 		9086C8A01D0F484D0008C532 /* welcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C89F1D0F484D0008C532 /* welcomeScreenViewController.m */; };
 		9086C8A31D0F4E660008C532 /* LocationClueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C8A21D0F4E660008C532 /* LocationClueViewController.m */; };
 		9086C8A61D0F4F6C0008C532 /* PhotoClueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C8A51D0F4F6C0008C532 /* PhotoClueViewController.m */; };
+		EF19EEC04474FC1225AACDC2 /* libPods-TheGreatHunt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0346330881FD82DC9CA9EA20 /* libPods-TheGreatHunt.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0346330881FD82DC9CA9EA20 /* libPods-TheGreatHunt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TheGreatHunt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43645D491D1080FE00993C32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43645D4B1D108AF300993C32 /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
+		43645D4C1D108B0400993C32 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
+		43645D4D1D108B0400993C32 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		43645D4E1D108B0400993C32 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		43645D4F1D108B0400993C32 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		43645D501D108B0400993C32 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		4386E68F1D0F31AB0075B96E /* TheGreatHunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGreatHunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4386E6931D0F31AB0075B96E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4386E6951D0F31AB0075B96E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -27,6 +40,7 @@
 		4386E69E1D0F31AB0075B96E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4386E6A11D0F31AB0075B96E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4386E6A31D0F31AB0075B96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		722BEDA3F32E88403EBFF0FB /* Pods-TheGreatHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGreatHunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt.debug.xcconfig"; sourceTree = "<group>"; };
 		9086C89B1D0F47F30008C532 /* singInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singInViewController.h; sourceTree = "<group>"; };
 		9086C89C1D0F47F30008C532 /* singInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singInViewController.m; sourceTree = "<group>"; };
 		9086C89E1D0F484D0008C532 /* welcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = welcomeScreenViewController.h; sourceTree = "<group>"; };
@@ -35,6 +49,7 @@
 		9086C8A21D0F4E660008C532 /* LocationClueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationClueViewController.m; sourceTree = "<group>"; };
 		9086C8A41D0F4F6C0008C532 /* PhotoClueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoClueViewController.h; sourceTree = "<group>"; };
 		9086C8A51D0F4F6C0008C532 /* PhotoClueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoClueViewController.m; sourceTree = "<group>"; };
+		997C6AEE5AEA65EBE7867B19 /* Pods-TheGreatHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGreatHunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,17 +57,57 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF19EEC04474FC1225AACDC2 /* libPods-TheGreatHunt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A2F2B11CB6CF727230EFFF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0346330881FD82DC9CA9EA20 /* libPods-TheGreatHunt.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43645D541D108B1400993C32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43645D4B1D108AF300993C32 /* Clue.h */,
+				43645D4C1D108B0400993C32 /* Clue.m */,
+				43645D4D1D108B0400993C32 /* Game.h */,
+				43645D4E1D108B0400993C32 /* Game.m */,
+				43645D4F1D108B0400993C32 /* User.h */,
+				43645D501D108B0400993C32 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		43645D551D108B1F00993C32 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9086C89B1D0F47F30008C532 /* singInViewController.h */,
+				9086C89C1D0F47F30008C532 /* singInViewController.m */,
+				9086C89E1D0F484D0008C532 /* welcomeScreenViewController.h */,
+				9086C89F1D0F484D0008C532 /* welcomeScreenViewController.m */,
+				9086C8A11D0F4E660008C532 /* LocationClueViewController.h */,
+				9086C8A21D0F4E660008C532 /* LocationClueViewController.m */,
+				9086C8A41D0F4F6C0008C532 /* PhotoClueViewController.h */,
+				9086C8A51D0F4F6C0008C532 /* PhotoClueViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		4386E6861D0F31AB0075B96E = {
 			isa = PBXGroup;
 			children = (
+				43645D491D1080FE00993C32 /* GoogleService-Info.plist */,
 				4386E6911D0F31AB0075B96E /* TheGreatHunt */,
 				4386E6901D0F31AB0075B96E /* Products */,
+				E0A992ABFE5D3852A0E9F57E /* Pods */,
+				2A2F2B11CB6CF727230EFFF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,14 +124,8 @@
 			children = (
 				4386E6951D0F31AB0075B96E /* AppDelegate.h */,
 				4386E6961D0F31AB0075B96E /* AppDelegate.m */,
-				9086C89B1D0F47F30008C532 /* singInViewController.h */,
-				9086C89C1D0F47F30008C532 /* singInViewController.m */,
-				9086C89E1D0F484D0008C532 /* welcomeScreenViewController.h */,
-				9086C89F1D0F484D0008C532 /* welcomeScreenViewController.m */,
-				9086C8A11D0F4E660008C532 /* LocationClueViewController.h */,
-				9086C8A21D0F4E660008C532 /* LocationClueViewController.m */,
-				9086C8A41D0F4F6C0008C532 /* PhotoClueViewController.h */,
-				9086C8A51D0F4F6C0008C532 /* PhotoClueViewController.m */,
+				43645D541D108B1400993C32 /* Models */,
+				43645D551D108B1F00993C32 /* Controllers */,
 				4386E69B1D0F31AB0075B96E /* Main.storyboard */,
 				4386E69E1D0F31AB0075B96E /* Assets.xcassets */,
 				4386E6A01D0F31AB0075B96E /* LaunchScreen.storyboard */,
@@ -94,6 +143,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E0A992ABFE5D3852A0E9F57E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				722BEDA3F32E88403EBFF0FB /* Pods-TheGreatHunt.debug.xcconfig */,
+				997C6AEE5AEA65EBE7867B19 /* Pods-TheGreatHunt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -101,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4386E6A61D0F31AB0075B96E /* Build configuration list for PBXNativeTarget "TheGreatHunt" */;
 			buildPhases = (
+				F004DBF6925BEA91613F617A /* 📦 Check Pods Manifest.lock */,
 				4386E68B1D0F31AB0075B96E /* Sources */,
 				4386E68C1D0F31AB0075B96E /* Frameworks */,
 				4386E68D1D0F31AB0075B96E /* Resources */,
+				4ED72F23E2777C849AFDD6E3 /* 📦 Embed Pods Frameworks */,
+				1F52C3F3FAB62FCEF93B80AB /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,12 +213,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				4386E6A21D0F31AB0075B96E /* LaunchScreen.storyboard in Resources */,
+				43645D4A1D1080FE00993C32 /* GoogleService-Info.plist in Resources */,
 				4386E69F1D0F31AB0075B96E /* Assets.xcassets in Resources */,
 				4386E69D1D0F31AB0075B96E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F52C3F3FAB62FCEF93B80AB /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4ED72F23E2777C849AFDD6E3 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F004DBF6925BEA91613F617A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4386E68B1D0F31AB0075B96E /* Sources */ = {
@@ -166,6 +276,9 @@
 			files = (
 				9086C8A01D0F484D0008C532 /* welcomeScreenViewController.m in Sources */,
 				9086C89D1D0F47F30008C532 /* singInViewController.m in Sources */,
+				43645D531D108B0400993C32 /* User.m in Sources */,
+				43645D511D108B0400993C32 /* Clue.m in Sources */,
+				43645D521D108B0400993C32 /* Game.m in Sources */,
 				9086C8A61D0F4F6C0008C532 /* PhotoClueViewController.m in Sources */,
 				9086C8A31D0F4E660008C532 /* LocationClueViewController.m in Sources */,
 				4386E6971D0F31AB0075B96E /* AppDelegate.m in Sources */,
@@ -279,6 +392,7 @@
 		};
 		4386E6A71D0F31AB0075B96E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 722BEDA3F32E88403EBFF0FB /* Pods-TheGreatHunt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheGreatHunt/Info.plist;
@@ -290,6 +404,7 @@
 		};
 		4386E6A81D0F31AB0075B96E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 997C6AEE5AEA65EBE7867B19 /* Pods-TheGreatHunt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TheGreatHunt/Info.plist;

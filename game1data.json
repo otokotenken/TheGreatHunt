@@ -1,0 +1,42 @@
+{
+	"game1": {
+		"name": "Game 1",
+		"currentClue": "clue1"
+	},
+	"clue1": {
+		"name": "clue1",
+		"gameRef": "game1",
+		"order": 1,
+		"textHint": "Where the big, loud red trucks live!",
+		"imageHint": "fenderHorseStatue.jpg",
+		"locationHint": {
+			"lat": 42.358256,
+			"long": -83.0726432
+		},
+		"locationHintRadius": 0.00005
+	},
+	"clue2": {
+		"name": "clue2",
+		"gameRef": "game1",
+		"order": 2,
+		"textHint": "Fancy a nice watch? Check this out in the art school courtyard.",
+		"imageHint": "shinolaClock.jpg",
+		"locationHint": {
+			"lat": 42.368375,
+			"long": -83.074137
+		},
+		"locationHintRadius": 0.00005
+	},
+	"clue3": {
+		"name": "clue3",
+		"gameRef": "game1",
+		"order": 3,
+		"textHint": "Across the street, follow your nose!",
+		"imageHint": "bucharestBuilding.jpg",
+		"locationHint": {
+			"lat": 42.3670131,
+			"long": -83.0687477
+		},
+		"locationHintRadius": 0.00005
+	}
+}
