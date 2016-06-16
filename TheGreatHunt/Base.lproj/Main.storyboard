@@ -46,6 +46,13 @@
                                     <action selector="signInSignUpButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MA3-ST-GRs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4B-tP-UVL">
+                                <rect key="frame" x="47" y="458" width="91" height="30"/>
+                                <state key="normal" title="Switch Users"/>
+                                <connections>
+                                    <action selector="signOutSwitchUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eil-S3-woR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
