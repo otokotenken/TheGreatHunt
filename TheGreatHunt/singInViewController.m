@@ -7,6 +7,8 @@
 //
 
 #import "singInViewController.h"
+#import "Game.h"
+#import "Clue.h"
 @import Firebase;
 
 @interface singInViewController ()
@@ -15,40 +17,24 @@
 
 @implementation singInViewController
 FIRDatabaseReference *ref;
+//NSDictionary *postDict;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //signup for an account
-//    [[FIRAuth auth]
-//     createUserWithEmail:@"asklingtoby@gmail.com"
-//     password:@"password"
-//     completion:^(FIRUser *_Nullable user,
-//                  NSError *_Nullable error) {
-//         NSLog(@"%@, %@" ,user, error);
-//     }];
-//    [[FIRAuth auth] signInWithEmail:@"otokonotenken13@gmail.com"
-//                           password:@"password"
-//                         completion:^(FIRUser *user, NSError *error) {
-//                            NSLog(@"%@, %@" ,user.description, error);
-//                         }];
-    
-//    NSError *error;
-//    [[FIRAuth auth] signOut:&error];
-//    if (!error) {
-//        // Sign-out succeeded
-//    }
-    
-    // Do any additional setup after loading the view.
     ref = [[FIRDatabase database] reference];
     
     //FIRDatabaseReference *childRef = [ref child:@"game1"];
     
      [ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
         NSDictionary *postDict = snapshot.value;
-         
+//         
          NSLog(@"%@", postDict);
-        // ...
+         NSLog(@"+++%@", [[postDict objectForKey:@"clue2"] objectForKey:@"name"]);
+         [self formatJSON:postDict];
+
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +42,32 @@ FIRDatabaseReference *ref;
     // Dispose of any resources that can be recreated.
 }
 
+-(void)formatJSON: (NSDictionary *)dict {
+    NSLog(@"FormatJSON function has been called!!!!!!!!!!!!!!!!!!!!!!!");
+
+    for (id dictKey in dict){
+        NSDictionary *clueMaybeGame = dict[dictKey];
+        NSLog(@"The dictionary name is %@ ", dictKey);
+            if ([dictKey rangeOfString:@"game1"].location != NSNotFound){
+            [Game getInstance].name = dictKey;
+            NSLog(@"******************%@", [Game getInstance].name);
+            } else if ([dictKey rangeOfString:@"clue"].location != NSNotFound){
+                NSLog(@"^^^^%@", [Game getInstance].name);
+                NSMutableArray *unfilteredCluesArray = [[NSMutableArray alloc]init];
+                Clue *tempClue = [self formatClue:clueMaybeGame];
+                NSLog(@"####################### %@", tempClue.textHint);
+            }
+        for (id clueKey in clueMaybeGame){
+            NSLog(@"The dictionary details is as following:\n Key:%@\n Value: %@ ",clueKey, clueMaybeGame[clueKey]);
+        
+        }
+    }
+}
+
+-(Clue *)formatClue: (NSDictionary *)clueDict {
+    Clue *clue = [[Clue alloc]initWithTextHint:clueDict[@"textHint"] andImageHint:clueDict[@"imageHint"] andLocationHint:clueDict[@"locationHint"] andlocationHintRadius:clueDict[@"locationHintRadius"]];
+    return clue;
+}
 
 - (IBAction)signInSignUpButtonPress:(id)sender {
         [[FIRAuth auth] signInWithEmail:_userEmailInputField.text
@@ -84,7 +96,9 @@ FIRDatabaseReference *ref;
             [alert addAction:secondAction];
             [self presentViewController:alert animated:YES completion:nil];
     } else {
+        //[self formatJSON:postDict];
         [self performSegueWithIdentifier:@"toWelcome" sender:nil];
+        
     }
 }
 
