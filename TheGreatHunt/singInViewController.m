@@ -57,14 +57,56 @@ FIRDatabaseReference *ref;
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)signInSignUpButtonPress:(id)sender {
+        [[FIRAuth auth] signInWithEmail:@"otokonotenken@gmail.com"
+                               password:@"password"
+                             completion:^(FIRUser *user, NSError *error) {
+                                NSLog(@"%@, %@" ,user.description, error);
+                                 [self decideSignInOrSignUp:error];
+                             }];
+//        [[FIRAuth auth]
+//         createUserWithEmail:@"otokonotenken13@gmail.com"
+//         password:@"password"
+//         completion:^(FIRUser *_Nullable user,
+//                      NSError *_Nullable error) {
+//             NSLog(@"%@, %@" ,user, error);
+//         }];
+    
+//        NSError *error;
+//        [[FIRAuth auth] signOut:&error];
+//        if (!error) {
+//            // Sign-out succeeded
+//        }
+    
 }
-*/
 
+-(void)decideSignInOrSignUp :(NSError *)error {
+    if(error){
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not Registered Yet?"
+                                                                           message:@"Would You Like To Sign Up?"
+                                                                    preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Sign Up"
+                                                                  style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                      [self signUpUser];
+                                                                  }];
+            UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                                   style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                       _userEmailInputField.text = @"";
+                                                                       _passwordInputField.text = @"";
+                                                                   }];
+            [alert addAction:firstAction];
+            [alert addAction:secondAction];
+            [self presentViewController:alert animated:YES completion:nil];
+    }
+}
+
+-(void)signUpUser {
+            [[FIRAuth auth]
+             createUserWithEmail:_userEmailInputField.text
+             password:_passwordInputField.text
+             completion:^(FIRUser *_Nullable user,
+                          NSError *_Nullable error) {
+                 NSLog(@"%@, %@" ,user, error);
+             }];
+}
 @end
