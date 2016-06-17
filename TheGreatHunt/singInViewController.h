@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Clue.h"
 
 @interface singInViewController : UIViewController
 
@@ -14,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordInputField;
 
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
+
+
 @end

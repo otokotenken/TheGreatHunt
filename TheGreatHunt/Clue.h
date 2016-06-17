@@ -13,12 +13,14 @@
 
 @interface Clue : NSObject
 
+@property (strong, nonatomic) NSString *gameRef;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *textHint;
 @property (strong, nonatomic) UIImage *imageHint;
 
 @property CLLocationCoordinate2D  locationHint;
 @property float locationHintRadius;
+@property int order;
 
-
+-(id)initWithTextHint: (NSString *)textHint andImageHint: (NSDictionary *)imageHint andLocationHint: (NSString *)locationHint andlocationHintRadius: (NSString *)locationHintRadius :(NSString *) gameRef : (NSString *)order;
 @end

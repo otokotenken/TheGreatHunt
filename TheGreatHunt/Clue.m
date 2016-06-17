@@ -10,7 +10,7 @@
 
 @implementation Clue
 
--(id)initWithTextHint: (NSString *)textHint andImageHint: (UIImage *)imageHint andLocationHint: (CLLocationCoordinate2D)locationHint andlocationHintRadius: (float)locationHintRadius{
+-(id)initWithTextHint: (NSString *)textHint andImageHint: (UIImage *)imageHint andLocationHint: (CLLocationCoordinate2D)locationHint andlocationHintRadius: (float)locationHintRadius :(NSString *) gameRef : (NSString *)order {
     self = [super init];
     if (self){
         _textHint = textHint;
@@ -20,6 +20,5 @@
     }
     return self;
 }
-
 
 @end
