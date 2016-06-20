@@ -44,6 +44,7 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signInSignUpButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MA3-ST-GRs"/>
+                                    <segue destination="hcC-y3-m9y" kind="modal" identifier="toWelcome" id="CJa-pD-6ha"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4B-tP-UVL">
@@ -119,12 +120,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vq8-cM-9zC">
-                                <rect key="frame" x="27" y="235" width="261" height="201"/>
-                                <connections>
-                                    <segue destination="vcR-rB-P8R" kind="embed" id="A46-Tg-AoK"/>
-                                </connections>
-                            </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="status label status label status label status label " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXF-tU-Xo1">
                                 <rect key="frame" x="33" y="459" width="255" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -138,10 +133,16 @@
                                     <segue destination="YRU-lO-ioB" kind="modal" id="dgO-KK-EIC"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Cds-SJ-vHY">
+                                <rect key="frame" x="33" y="232" width="255" height="234"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zam-hs-qHh"/>
+                    <connections>
+                        <outlet property="mapView" destination="Cds-SJ-vHY" id="Ohh-iC-Lam"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuF-hS-rdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +197,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Hdz-9J-THp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JyQ-uu-dck">
-                        <rect key="frame" x="0.0" y="0.0" width="261" height="201"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -207,6 +208,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="CJa-pD-6ha"/>
         <segue reference="ubi-fG-wo9"/>
     </inferredMetricsTieBreakers>
 </document>
