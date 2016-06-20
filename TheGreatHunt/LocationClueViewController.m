@@ -19,27 +19,33 @@
 
 Clue *currentClue;
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *currentClueName =[[Game getInstance] currentClue];
-    for (Clue *obj in [[Game getInstance] cluesArray]){
-        if ([[obj name] isEqualToString:currentClueName]){
-            currentClue = obj;
-        }
-    }
-    _textHintTextView.text = [currentClue textHint];
-    self.locationManager = [[CLLocationManager alloc]init];
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-    self.locationManager.delegate = self;
-    [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager startUpdatingLocation];
-    
-    [_mapView setShowsUserLocation:YES];
-    [_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    
-    // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	currentClue = [self getCurrentClue];
+	
+	_textHintTextView.text = [currentClue textHint];
+	self.locationManager = [[CLLocationManager alloc]init];
+	self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+	self.locationManager.delegate = self;
+	[self.locationManager requestAlwaysAuthorization];
+	[self.locationManager startUpdatingLocation];
+	
+	[_mapView setShowsUserLocation:YES];
+	[_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+}
+
+-(Clue *)getCurrentClue {
+	NSString *currentClueName = [Game getInstance].currentClue;
+	for (Clue *obj in [[Game getInstance] cluesArray]){
+		if ([[obj name] isEqualToString:currentClueName]){
+			return obj;
+		}
+	}
+	
+	return nil;
 }
 
 - (void)clueRegionSetup{
@@ -80,6 +86,10 @@ Clue *currentClue;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)unwindToLocationClue:(UIStoryboardSegue *)unwindSegue {
+	
 }
 
 /*
