@@ -56,15 +56,7 @@ FIRDatabaseReference *dbRef;
 	Clue *firstClue = [[Game getInstance].cluesArray objectAtIndex:index];
 	[Game getInstance].currentClue = firstClue.name;
 	
-	//update in firebase
-	[dbRef updateChildValues:@{[NSString stringWithFormat:@"%@/currentClue", [Game getInstance].name]: firstClue.name}
-		 withCompletionBlock:^(NSError *error, FIRDatabaseReference *ref) {
-			 if (error) {
-				 NSLog(@"Data could not be saved: %@", error);
-			 } else {
-				 NSLog(@"Data saved successfully.");
-			 }
-		 }];
+	[self updateCurrentClueInFirebaseWithName:firstClue.name];
 }
 
 -(BOOL)moveToNextClue {
@@ -81,17 +73,22 @@ FIRDatabaseReference *dbRef;
 		Clue *nextClue = [[Game getInstance].cluesArray objectAtIndex:index];
 		[Game getInstance].currentClue = nextClue.name;
 		
-		//update in firebase
-		[dbRef updateChildValues:@{[NSString stringWithFormat:@"%@/currentClue", [Game getInstance].name]: nextClue.name}
-			   withCompletionBlock:^(NSError *error, FIRDatabaseReference *ref) {
-			if (error) {
-				NSLog(@"Data could not be saved: %@", error);
-			} else {
-				NSLog(@"Data saved successfully.");
-			}
-		}];
+		[self updateCurrentClueInFirebaseWithName:nextClue.name];
+		
 		return YES;
 	}
+}
+
+-(void)updateCurrentClueInFirebaseWithName:(NSString *) newClueName {
+	//update in firebase
+	[dbRef updateChildValues:@{[NSString stringWithFormat:@"%@/currentClue", [Game getInstance].name]: newClueName}
+		 withCompletionBlock:^(NSError *error, FIRDatabaseReference *ref) {
+			 if (error) {
+				 NSLog(@"Data could not be saved: %@", error);
+			 } else {
+				 NSLog(@"Data saved successfully.");
+			 }
+		 }];
 }
 
 /*
