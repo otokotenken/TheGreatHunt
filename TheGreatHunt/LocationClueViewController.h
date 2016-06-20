@@ -10,4 +10,5 @@
 
 @interface LocationClueViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *textHintTextView;
 @end
