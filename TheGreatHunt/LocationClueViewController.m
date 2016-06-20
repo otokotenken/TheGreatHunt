@@ -100,6 +100,8 @@ Clue *currentClue;
     NSLog(@"Entered region %@ \n", region.identifier);
     _debugStatusRegion.text = @"You Have Entered the Clue Zone";
     _debugStatusRegion.textColor = [UIColor greenColor];
+    
+    [self performSegueWithIdentifier:@"locationToPhotoSegue" sender:self];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region{
@@ -118,6 +120,11 @@ Clue *currentClue;
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
 }
 
 - (IBAction)unwindToLocationClue:(UIStoryboardSegue *)unwindSegue {
