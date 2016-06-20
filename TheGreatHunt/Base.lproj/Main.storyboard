@@ -142,6 +142,7 @@
                     <navigationItem key="navigationItem" id="zam-hs-qHh"/>
                     <connections>
                         <outlet property="mapView" destination="Cds-SJ-vHY" id="Ohh-iC-Lam"/>
+                        <outlet property="textHintTextView" destination="xpR-0H-ltr" id="OLY-tx-TdQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuF-hS-rdL" userLabel="First Responder" sceneMemberID="firstResponder"/>

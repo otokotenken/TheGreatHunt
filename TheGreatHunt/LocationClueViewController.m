@@ -17,8 +17,19 @@
 
 @implementation LocationClueViewController
 
+Clue *currentClue;
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSString *currentClueName =[[Game getInstance] currentClue];
+    for (Clue *obj in [[Game getInstance] cluesArray]){
+        if ([[obj name] isEqualToString:currentClueName]){
+            currentClue = obj;
+        }
+    }
+    _textHintTextView.text = [currentClue textHint];
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
     self.locationManager.delegate = self;

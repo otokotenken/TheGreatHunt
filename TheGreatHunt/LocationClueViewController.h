@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Clue.h"
+#import "Game.h"
 
 @interface LocationClueViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
