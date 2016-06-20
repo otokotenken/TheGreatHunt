@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
-@property (weak, nonatomic) IBOutlet UITextView *textHintTextView;
+@property (strong, nonatomic) IBOutlet UILabel *textHintLabel;
+
 @end
