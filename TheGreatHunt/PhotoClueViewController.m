@@ -43,7 +43,7 @@ FIRDatabaseReference *dbRef;
 		[self performSegueWithIdentifier:@"unwindToLocation" sender:sender];
 	}
 	else {
-		//what to do when you win?
+        [self alertUserHasWon];
 	}
 }
 - (IBAction)restartGameButton:(id)sender {
@@ -91,14 +91,19 @@ FIRDatabaseReference *dbRef;
 		 }];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)alertUserHasWon{
+   
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Win" message:@"Your the Best!!!!" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Play Again?"
+                                                    style:UIAlertActionStyleDefault
+                                                    handler:^(UIAlertAction * action) {
+                                                        [self performSegueWithIdentifier:@"toWelcome" sender: self];
+                                                    }];
+        [alert addAction:firstAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    
 }
-*/
 
 @end
