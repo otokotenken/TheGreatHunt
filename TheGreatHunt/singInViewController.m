@@ -28,7 +28,7 @@ FIRDatabaseReference *ref;
 -(void)retrieveGameDataFromDBRef:(FIRDatabaseReference *)ref {
 	[ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
 		NSDictionary *postDict = snapshot.value;
-		NSLog(@" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++The JSON type of dictionary is %@", postDict);
+		//NSLog(@" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++The JSON type of dictionary is %@", postDict);
 		[self formatJSON:postDict];
 	}];
 }

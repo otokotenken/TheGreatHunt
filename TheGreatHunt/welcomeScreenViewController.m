@@ -14,12 +14,9 @@
 
 @implementation welcomeScreenViewController
 
-Clue *currentClue;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	currentClue = [self getCurrentClue];
     // Do any additional setup after loading the view.
 }
 
@@ -29,7 +26,7 @@ Clue *currentClue;
 }
 
 -(Clue *)getCurrentClue {
-	NSString *currentClueName =[[Game getInstance] currentClue];
+	NSString *currentClueName =[Game getInstance].currentClue;
 	for (Clue *obj in [[Game getInstance] cluesArray]){
 		if ([[obj name] isEqualToString:currentClueName]){
 			return obj;
@@ -37,6 +34,10 @@ Clue *currentClue;
 	}
 	
 	return nil;
+}
+
+- (IBAction)unwindToWelcome:(UIStoryboardSegue *)unwindSegue {
+	
 }
 
 /*
