@@ -27,6 +27,7 @@
 /* Begin PBXFileReference section */
 		0346330881FD82DC9CA9EA20 /* libPods-TheGreatHunt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TheGreatHunt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		426536CE1D1832A000206FAD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		432DCAC31D186C6D00B20397 /* testLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = testLocation.gpx; sourceTree = "<group>"; };
 		43645D4B1D108AF300993C32 /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
 		43645D4C1D108B0400993C32 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
 		43645D4D1D108B0400993C32 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 				43645D541D108B1400993C32 /* Models */,
 				43645D551D108B1F00993C32 /* Controllers */,
 				4386E69B1D0F31AB0075B96E /* Main.storyboard */,
+				432DCAC31D186C6D00B20397 /* testLocation.gpx */,
 				4386E69E1D0F31AB0075B96E /* Assets.xcassets */,
 				4386E6A01D0F31AB0075B96E /* LaunchScreen.storyboard */,
 				4386E6A31D0F31AB0075B96E /* Info.plist */,
@@ -190,6 +192,7 @@
 				TargetAttributes = {
 					4386E68E1D0F31AB0075B96E = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 9FYN4E4B36;
 					};
 				};
 			};
@@ -399,10 +402,13 @@
 			baseConfigurationReference = 722BEDA3F32E88403EBFF0FB /* Pods-TheGreatHunt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TheGreatHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.detroitlabs.TheGreatHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -411,10 +417,13 @@
 			baseConfigurationReference = 997C6AEE5AEA65EBE7867B19 /* Pods-TheGreatHunt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TheGreatHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.detroitlabs.TheGreatHunt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
