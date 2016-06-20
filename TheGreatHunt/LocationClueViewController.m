@@ -45,7 +45,7 @@ Clue *currentClue;
 - (void)viewWillAppear:(BOOL)animated {
 	currentClue = [self getCurrentClue];
 	
-	_textHintTextView.text = [currentClue textHint];
+	_textHintLabel.text = [currentClue textHint];
 	self.locationManager = [[CLLocationManager alloc]init];
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
 	self.locationManager.delegate = self;
