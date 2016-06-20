@@ -8,15 +8,20 @@
 
 #import "Clue.h"
 
+
 @implementation Clue
 
--(id)initWithTextHint: (NSString *)textHint andImageHint: (UIImage *)imageHint andLocationHint: (CLLocationCoordinate2D)locationHint andlocationHintRadius: (float)locationHintRadius{
+-(id)initWithTextHint: (NSString *)textHint andImageHint: (NSString *)imageHint andLocationHint: (NSDictionary *)locationHint andlocationHintRadius: (NSString *)locationHintRadius :(NSString *)gameRef :(NSString *)order :(NSString *)name{
     self = [super init];
     if (self){
         _textHint = textHint;
-        _imageHint = imageHint;
-        _locationHint = locationHint;
-        _locationHintRadius = locationHintRadius;
+        _imageHint = [UIImage imageNamed:imageHint];
+        _locationHint.latitude = [locationHint[@"lat"] doubleValue];
+        _locationHint.longitude = [locationHint[@"long"] doubleValue];
+        _locationHintRadius = [locationHintRadius floatValue];
+        _gameRef = gameRef;
+        _name = name;
+        _order = [order intValue];
     }
     return self;
 }
