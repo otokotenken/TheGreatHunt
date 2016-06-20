@@ -9,16 +9,12 @@
 #import "singInViewController.h"
 #import "Game.h"
 #import "Clue.h"
+#import "LocationClueViewController.h"
 @import Firebase;
-
 @interface singInViewController ()
 @end
-
 @implementation singInViewController
 FIRDatabaseReference *ref;
-
-
-
 //MARK: life cycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -113,7 +109,6 @@ FIRDatabaseReference *ref;
                              [self decideSignInOrSignUp:error];
                          }];
 }
-
 -(void)decideSignInOrSignUp :(NSError *)error {
     if(error){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not Registered Yet?"
@@ -137,9 +132,6 @@ FIRDatabaseReference *ref;
         
     }
 }
-
-
-
 -(void)signUpUser {
     [[FIRAuth auth]
      createUserWithEmail:_userEmailInputField.text
@@ -149,8 +141,6 @@ FIRDatabaseReference *ref;
          NSLog(@"%@, %@" ,user, error);
      }];
 }
-
-
 - (IBAction)signOutSwitchUser:(id)sender {
     NSError *error;
     [[FIRAuth auth] signOut:&error];
@@ -160,5 +150,6 @@ FIRDatabaseReference *ref;
         NSLog(@"%@", error);
     }
 }
+
 
 @end

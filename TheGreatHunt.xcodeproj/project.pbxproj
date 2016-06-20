@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		426536CF1D1832A000206FAD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426536CE1D1832A000206FAD /* MapKit.framework */; };
 		43645D511D108B0400993C32 /* Clue.m in Sources */ = {isa = PBXBuildFile; fileRef = 43645D4C1D108B0400993C32 /* Clue.m */; };
 		43645D521D108B0400993C32 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 43645D4E1D108B0400993C32 /* Game.m */; };
 		43645D531D108B0400993C32 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 43645D501D108B0400993C32 /* User.m */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0346330881FD82DC9CA9EA20 /* libPods-TheGreatHunt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TheGreatHunt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		426536CE1D1832A000206FAD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		43645D4B1D108AF300993C32 /* Clue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clue.h; sourceTree = "<group>"; };
 		43645D4C1D108B0400993C32 /* Clue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Clue.m; sourceTree = "<group>"; };
 		43645D4D1D108B0400993C32 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426536CF1D1832A000206FAD /* MapKit.framework in Frameworks */,
 				EF19EEC04474FC1225AACDC2 /* libPods-TheGreatHunt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +70,7 @@
 		2A2F2B11CB6CF727230EFFF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				426536CE1D1832A000206FAD /* MapKit.framework */,
 				0346330881FD82DC9CA9EA20 /* libPods-TheGreatHunt.a */,
 			);
 			name = Frameworks;
