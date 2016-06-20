@@ -20,34 +20,58 @@
 
 Clue *currentClue;
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *currentClueName =[[Game getInstance] currentClue];
-    for (Clue *obj in [[Game getInstance] cluesArray]){
-        if ([[obj name] isEqualToString:currentClueName]){
-            currentClue = obj;
-        }
-    }
-    _textHintTextView.text = [currentClue textHint];
-    self.locationManager = [[CLLocationManager alloc]init];
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-    self.locationManager.delegate = self;
-    [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager startUpdatingLocation];
+//    NSString *currentClueName =[[Game getInstance] currentClue];
+//    for (Clue *obj in [[Game getInstance] cluesArray]){
+//        if ([[obj name] isEqualToString:currentClueName]){
+//            currentClue = obj;
+//        }
+//    }
+//    _textHintTextView.text = [currentClue textHint];
+//    self.locationManager = [[CLLocationManager alloc]init];
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+//    self.locationManager.delegate = self;
+//    [self.locationManager requestAlwaysAuthorization];
+//    [self.locationManager startUpdatingLocation];
+//    [self clueRegionSetup];
+//    
+//    
+//    [_mapView setShowsUserLocation:YES];
+//    [_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+//
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	currentClue = [self getCurrentClue];
+	
+	_textHintTextView.text = [currentClue textHint];
+	self.locationManager = [[CLLocationManager alloc]init];
+	self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+	self.locationManager.delegate = self;
+	[self.locationManager requestAlwaysAuthorization];
+	[self.locationManager startUpdatingLocation];
     [self clueRegionSetup];
-    
-    
-    [_mapView setShowsUserLocation:YES];
-    [_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    
-    // Do any additional setup after loading the view.
+	
+	[_mapView setShowsUserLocation:YES];
+	[_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+}
+
+-(Clue *)getCurrentClue {
+	NSString *currentClueName = [Game getInstance].currentClue;
+	for (Clue *obj in [[Game getInstance] cluesArray]){
+		if ([[obj name] isEqualToString:currentClueName]){
+			return obj;
+		}
+	}
+	
+	return nil;
+
 }
 
 - (void)clueRegionSetup{
-    float spanX = 0.05; // span of the map this is a 20mile radius. 1 degree == 69 miles, do math accordingly.
-    float spanY = 0.05;
+    float spanX = 0.01; // span of the map this is a 20mile radius. 1 degree == 69 miles, do math accordingly.
+    float spanY = 0.01;
 //    _currentLocation = _locationManager.location; //current location
     NSLog(@"Current location: %@", _currentLocation.description);
     MKCoordinateRegion region; // the following lines define the region we want to zoom in on
@@ -55,7 +79,7 @@ Clue *currentClue;
 //    region.center.longitude = currentClue.locationHint.longitude;
 //    
     region.center.latitude = 42.363558;
-    region.center.longitude = -83.73359;
+    region.center.longitude = -83.073359;
     region.span = MKCoordinateSpanMake(spanX, spanY);
     [self.mapView setRegion:region animated:YES];
 //    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(region.center.latitude, region.center.longitude);
@@ -87,13 +111,17 @@ Clue *currentClue;
 // Determine current state - if person is already inside the Region
 - (void)locationManager:(CLLocationManager *)manager
       didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
-    
+
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)unwindToLocationClue:(UIStoryboardSegue *)unwindSegue {
+	
 }
 
 /*

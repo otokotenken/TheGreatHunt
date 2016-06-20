@@ -53,6 +53,7 @@
 		9086C8A41D0F4F6C0008C532 /* PhotoClueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoClueViewController.h; sourceTree = "<group>"; };
 		9086C8A51D0F4F6C0008C532 /* PhotoClueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoClueViewController.m; sourceTree = "<group>"; };
 		997C6AEE5AEA65EBE7867B19 /* Pods-TheGreatHunt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGreatHunt.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt.release.xcconfig"; sourceTree = "<group>"; };
+		D4870C731D1844C800EEBEDF /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 				9086C89F1D0F484D0008C532 /* welcomeScreenViewController.m */,
 				9086C8A11D0F4E660008C532 /* LocationClueViewController.h */,
 				9086C8A21D0F4E660008C532 /* LocationClueViewController.m */,
+				D4870C731D1844C800EEBEDF /* GameController.h */,
 				9086C8A41D0F4F6C0008C532 /* PhotoClueViewController.h */,
 				9086C8A51D0F4F6C0008C532 /* PhotoClueViewController.m */,
 			);
