@@ -19,6 +19,17 @@
     // Do any additional setup after loading the view.
 }
 
+-(Clue *)getCurrentClue {
+	NSString *currentClueName =[[Game getInstance] currentClue];
+	for (Clue *obj in [[Game getInstance] cluesArray]){
+		if ([[obj name] isEqualToString:currentClueName]){
+			return obj;
+		}
+	}
+	
+	return nil;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

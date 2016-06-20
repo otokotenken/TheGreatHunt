@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameController.h"
 
-@interface PhotoClueViewController : UIViewController
+@interface PhotoClueViewController : UIViewController <GameController>
 
 @end

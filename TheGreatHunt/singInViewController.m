@@ -17,19 +17,21 @@
 FIRDatabaseReference *ref;
 //MARK: life cycle Methods
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    ref = [[FIRDatabase database] reference];
-    [ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-        NSDictionary *postDict = snapshot.value;
-        NSLog(@" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++The JSON type of dictionary is %@", postDict);
-        [self formatJSON:postDict];
-    }];
+	[super viewDidLoad];
+	ref = [[FIRDatabase database] reference];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+	[super didReceiveMemoryWarning];
 }
 
+-(void)retrieveGameDataFromDBRef:(FIRDatabaseReference *)ref {
+	[ref observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+		NSDictionary *postDict = snapshot.value;
+		NSLog(@" ++++++++++++++++++++++++++++++++++++++++++++++++++++++++The JSON type of dictionary is %@", postDict);
+		[self formatJSON:postDict];
+	}];
+}
 //MARK:Interactivity Methods
 
 //format data to NSObject
@@ -109,6 +111,7 @@ FIRDatabaseReference *ref;
                              [self decideSignInOrSignUp:error];
                          }];
 }
+
 -(void)decideSignInOrSignUp :(NSError *)error {
     if(error){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not Registered Yet?"
@@ -127,7 +130,7 @@ FIRDatabaseReference *ref;
         [alert addAction:secondAction];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-        //[self formatJSON:postDict];
+		[self retrieveGameDataFromDBRef:ref];
         [self performSegueWithIdentifier:@"toWelcome" sender:nil];
         
     }

@@ -14,14 +14,29 @@
 
 @implementation welcomeScreenViewController
 
+Clue *currentClue;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	currentClue = [self getCurrentClue];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(Clue *)getCurrentClue {
+	NSString *currentClueName =[[Game getInstance] currentClue];
+	for (Clue *obj in [[Game getInstance] cluesArray]){
+		if ([[obj name] isEqualToString:currentClueName]){
+			return obj;
+		}
+	}
+	
+	return nil;
 }
 
 /*

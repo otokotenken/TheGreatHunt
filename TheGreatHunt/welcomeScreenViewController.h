@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameController.h"
 
-@interface welcomeScreenViewController : UIViewController
+@interface welcomeScreenViewController : UIViewController <GameController>
 
 @end
