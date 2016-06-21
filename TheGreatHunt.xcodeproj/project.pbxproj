@@ -167,12 +167,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4386E6A61D0F31AB0075B96E /* Build configuration list for PBXNativeTarget "TheGreatHunt" */;
 			buildPhases = (
+				6099D3EA7F07436951E61ED4 /* 📦 Check Pods Manifest.lock */,
 				F004DBF6925BEA91613F617A /* [CP] Check Pods Manifest.lock */,
 				4386E68B1D0F31AB0075B96E /* Sources */,
 				4386E68C1D0F31AB0075B96E /* Frameworks */,
 				4386E68D1D0F31AB0075B96E /* Resources */,
 				4ED72F23E2777C849AFDD6E3 /* [CP] Embed Pods Frameworks */,
 				1F52C3F3FAB62FCEF93B80AB /* [CP] Copy Pods Resources */,
+				1D9A2808EEBBB0D8BF205FBB /* 📦 Embed Pods Frameworks */,
+				4DBEC0C9050622849A663D66 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,6 +234,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1D9A2808EEBBB0D8BF205FBB /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1F52C3F3FAB62FCEF93B80AB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +257,21 @@
 			inputPaths = (
 			);
 			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DBEC0C9050622849A663D66 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +292,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6099D3EA7F07436951E61ED4 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F004DBF6925BEA91613F617A /* [CP] Check Pods Manifest.lock */ = {

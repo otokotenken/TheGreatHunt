@@ -11,6 +11,7 @@
 
 @interface PhotoClueViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageHintImageView;
 @end
 
 @implementation PhotoClueViewController
@@ -20,6 +21,10 @@ FIRDatabaseReference *dbRef;
     [super viewDidLoad];
 	dbRef = [[FIRDatabase database] reference];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	_imageHintImageView.image = [self getCurrentClue].imageHint;
 }
 
 -(Clue *)getCurrentClue {
