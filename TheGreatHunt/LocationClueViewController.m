@@ -46,6 +46,10 @@ Clue *currentClue;
 	currentClue = [self getCurrentClue];
 	
 	_textHintLabel.text = [currentClue textHint];
+    // need to refactor and change the name of this label to the status label
+    NSString *statusLabelClueCountText = [Game getInstance].currentClue;
+    _debugStatusRegion.text = [NSString stringWithFormat:@"%@ of %lu clues", statusLabelClueCountText, [Game getInstance].cluesArray.count];
+    
 	self.locationManager = [[CLLocationManager alloc]init];
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
 	self.locationManager.delegate = self;
@@ -70,23 +74,25 @@ Clue *currentClue;
 }
 
 - (void)clueRegionSetup{
+    //commented out lines with long and lat are the clue long and lat. 
+    
     float spanX = 0.01; // span of the map this is a 20mile radius. 1 degree == 69 miles, do math accordingly.
     float spanY = 0.01;
 //    _currentLocation = _locationManager.location; //current location
     NSLog(@"Current location: %@", _currentLocation.description);
     MKCoordinateRegion region; // the following lines define the region we want to zoom in on
-//    region.center.latitude = currentClue.locationHint.latitude;
-//    region.center.longitude = currentClue.locationHint.longitude;
-//    
-    region.center.latitude = 42.363558;
-    region.center.longitude = -83.073359;
+    region.center.latitude = currentClue.locationHint.latitude;
+    region.center.longitude = currentClue.locationHint.longitude;
+//
+//    region.center.latitude = 42.363558;
+//    region.center.longitude = -83.073359;
     region.span = MKCoordinateSpanMake(spanX, spanY);
     [self.mapView setRegion:region animated:YES];
-//    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(region.center.latitude, region.center.longitude);
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(region.center.latitude, region.center.longitude);
     
-    CLLocationCoordinate2D center = CLLocationCoordinate2DMake(42.363558, -83.073359);
+    //CLLocationCoordinate2D center = CLLocationCoordinate2DMake(42.363558, -83.073359);
     
-    CLRegion *clueArea = [[CLCircularRegion alloc]initWithCenter:center radius:50.0 identifier:@"Clue Area"];
+    CLRegion *clueArea = [[CLCircularRegion alloc]initWithCenter:center radius:25.0 identifier:@"Clue Area"];
     [_locationManager startMonitoringForRegion:clueArea];
     NSLog(@"clue Area: %@", clueArea);
     [_locationManager requestStateForRegion:clueArea];
@@ -94,6 +100,7 @@ Clue *currentClue;
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
     NSLog(@"Now monitoring %@ \n\n ", region.identifier);
+    //[_locationManager requestStateForRegion: region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
@@ -111,11 +118,16 @@ Clue *currentClue;
 }
 
 // Determine current state - if person is already inside the Region
-- (void)locationManager:(CLLocationManager *)manager
-      didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
-
+- (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
+    // When regions are initialized, see if we are already within the geofence.
+    if (state == CLRegionStateInside){
+        NSLog(@"Already in the region %@ \n", region.identifier);
+        _debugStatusRegion.text = @"You are already in the Clue Zone";
+        _debugStatusRegion.textColor = [UIColor blueColor];
+        [self performSegueWithIdentifier:@"locationToPhotoSegue" sender:self];
+    }
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
