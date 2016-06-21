@@ -95,12 +95,12 @@ Clue *currentClue;
     CLRegion *clueArea = [[CLCircularRegion alloc]initWithCenter:center radius:50.0 identifier:@"Clue Area"];
     [_locationManager startMonitoringForRegion:clueArea];
     NSLog(@"clue Area: %@", clueArea);
-    [_locationManager requestStateForRegion:clueArea];
+   // [_locationManager requestStateForRegion:clueArea];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
     NSLog(@"Now monitoring %@ \n\n ", region.identifier);
-    //[_locationManager requestStateForRegion: region];
+    [_locationManager requestStateForRegion: region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
