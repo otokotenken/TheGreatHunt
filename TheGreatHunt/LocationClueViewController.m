@@ -100,6 +100,7 @@ Clue *currentClue;
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
     NSLog(@"Now monitoring %@ \n\n ", region.identifier);
+    [_locationManager requestStateForRegion: region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
@@ -115,11 +116,15 @@ Clue *currentClue;
 }
 
 // Determine current state - if person is already inside the Region
-- (void)locationManager:(CLLocationManager *)manager
-      didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
-
+- (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
+    // When regions are initialized, see if we are already within the geofence.
+    if (state == CLRegionStateInside){
+        NSLog(@"Already in the region %@ \n", region.identifier);
+        _debugStatusRegion.text = @"You are already in the Clue Zone";
+        _debugStatusRegion.textColor = [UIColor blueColor];
+    }
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
