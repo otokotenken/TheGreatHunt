@@ -1,10 +1,27 @@
 <?xml version="1.0"?>
 <gpx version="1.1" creator="Xcode"> 
 
+    <wpt lat="42.365687" lon="-83.070452">
+        <name>Woodward and Burroughs</name>
+        
+        <time>2014-09-24T14:55:37Z</time>
+    </wpt>
+
     <wpt lat="42.364918" lon="-83.074008">
-         <name>Test Location TechTown</name>
+         <name>TechTown</name>
   
-         <time>2014-09-24T14:55:37Z</time>
+         <time>2014-09-24T14:56:37Z</time>
 	</wpt>
+    
+    <wpt lat="42.368168" lon="-83.074207">
+        <name>CCS Shinola</name>
+        
+        <time>2014-09-24T14:58:37Z</time>
+    </wpt>
+    <wpt lat="42.367122" lon="-83.068767">
+        <name>Bucharest</name>
+        
+        <time>2014-09-24T15:00:37Z</time>
+    </wpt>
     
 </gpx>
