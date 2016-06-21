@@ -167,7 +167,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4386E6A61D0F31AB0075B96E /* Build configuration list for PBXNativeTarget "TheGreatHunt" */;
 			buildPhases = (
-				6099D3EA7F07436951E61ED4 /* 📦 Check Pods Manifest.lock */,
+				6099D3EA7F07436951E61ED4 /* [CP] Check Pods Manifest.lock */,
 				F004DBF6925BEA91613F617A /* [CP] Check Pods Manifest.lock */,
 				4386E68B1D0F31AB0075B96E /* Sources */,
 				4386E68C1D0F31AB0075B96E /* Frameworks */,
@@ -294,14 +294,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6099D3EA7F07436951E61ED4 /* 📦 Check Pods Manifest.lock */ = {
+		6099D3EA7F07436951E61ED4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
