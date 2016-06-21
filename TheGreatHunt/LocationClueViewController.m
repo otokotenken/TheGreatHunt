@@ -92,15 +92,15 @@ Clue *currentClue;
     
     //CLLocationCoordinate2D center = CLLocationCoordinate2DMake(42.363558, -83.073359);
     
-    CLRegion *clueArea = [[CLCircularRegion alloc]initWithCenter:center radius:25.0 identifier:@"Clue Area"];
+    CLRegion *clueArea = [[CLCircularRegion alloc]initWithCenter:center radius:50.0 identifier:@"Clue Area"];
     [_locationManager startMonitoringForRegion:clueArea];
     NSLog(@"clue Area: %@", clueArea);
-    [_locationManager requestStateForRegion:clueArea];
+   // [_locationManager requestStateForRegion:clueArea];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
     NSLog(@"Now monitoring %@ \n\n ", region.identifier);
-    //[_locationManager requestStateForRegion: region];
+    [_locationManager requestStateForRegion: region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
@@ -124,7 +124,7 @@ Clue *currentClue;
         NSLog(@"Already in the region %@ \n", region.identifier);
         _debugStatusRegion.text = @"You are already in the Clue Zone";
         _debugStatusRegion.textColor = [UIColor blueColor];
-        [self performSegueWithIdentifier:@"locationToPhotoSegue" sender:self];
+       [self performSegueWithIdentifier:@"locationToPhotoSegue" sender:self];
     }
     
 }
