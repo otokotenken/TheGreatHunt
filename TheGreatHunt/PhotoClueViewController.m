@@ -49,6 +49,7 @@ FIRDatabaseReference *dbRef;
 	}
 	else {
         NSLog(@"Michael help meeeeee***************************");
+//        [self performSegueWithIdentifier:@"unwindToWelcome" sender:sender];
 	}
 }
 - (IBAction)restartGameButton:(id)sender {
@@ -105,7 +106,7 @@ FIRDatabaseReference *dbRef;
         UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Play Again?"
                                                     style:UIAlertActionStyleDefault
                                                     handler:^(UIAlertAction * action) {
-                                                        [self performSegueWithIdentifier:@"toWelcome" sender: self];
+                                                        [self performSegueWithIdentifier:@"unwindToWelcome" sender: self];
                                                     }];
         [alert addAction:firstAction];
         [self presentViewController:alert animated:YES completion:nil];
