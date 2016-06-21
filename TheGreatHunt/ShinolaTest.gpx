@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 <gpx version="1.1" creator="Xcode"> 
 
-    <wpt lat="42.364918" lon="-83.074008">
-         <name>Test Location TechTown</name>
-  
+
+    <wpt lat="42.367806" lon="-83.074726">
+         <name>Shinola</name>
+         
+       
          <time>2014-09-24T14:55:37Z</time>
 	</wpt>
     
