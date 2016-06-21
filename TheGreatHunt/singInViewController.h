@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *userEmailInputField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordInputField;
+@property (weak, nonatomic) IBOutlet UILabel *errorDisplayLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *signInButton;
 @end

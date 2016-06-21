@@ -106,6 +106,8 @@ FIRDatabaseReference *dbRef;
         UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Play Again?"
                                                     style:UIAlertActionStyleDefault
                                                     handler:^(UIAlertAction * action) {
+                                                        [self moveToFirstClue];
+//                                                        [self updateCurrentClueInFirebaseWithName:firstClue.name];
                                                         [self performSegueWithIdentifier:@"unwindToWelcome" sender: self];
                                                     }];
         [alert addAction:firstAction];
