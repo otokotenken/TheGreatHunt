@@ -15,7 +15,7 @@
     self = [super init];
     if (self){
         _textHint = textHint;
-        _imageHint = [UIImage imageNamed:imageHint];
+        _imageHint = [self createUIImageFromBase64String:imageHint];
         _locationHint.latitude = [locationHint[@"lat"] doubleValue];
         _locationHint.longitude = [locationHint[@"long"] doubleValue];
         _locationHintRadius = [locationHintRadius floatValue];
@@ -26,5 +26,12 @@
     return self;
 }
 
+-(UIImage *)createUIImageFromBase64String:(NSString *)string {
+	NSURL *url = [NSURL URLWithString:string];
+	NSData *imageData = [NSData dataWithContentsOfURL:url];
+	UIImage *hintImage = [UIImage imageWithData:imageData];
+	
+	return hintImage;
+}
 
 @end

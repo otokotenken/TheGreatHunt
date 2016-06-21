@@ -185,6 +185,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="imageHintImageView" destination="lGP-vq-1QR" id="j2j-Xh-haD"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToLocation" unwindAction="unwindToLocationClue:" id="Zjb-yk-N9a"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToWelcome" unwindAction="unwindToWelcome:" id="BDt-Ye-DyN"/>
                     </connections>
