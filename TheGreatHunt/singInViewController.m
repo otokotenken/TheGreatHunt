@@ -108,7 +108,7 @@ FIRDatabaseReference *ref;
                            password:_passwordInputField.text
                          completion:^(FIRUser *user, NSError *error) {
                              NSLog(@"%@, %@" ,user.description, error);
-                             [self decideSignInOrSignUp:error];
+                             [self decideSignInOrSignUp: error];
                          }];
 }
 

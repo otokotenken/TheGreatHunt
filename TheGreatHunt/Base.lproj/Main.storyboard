@@ -44,7 +44,6 @@
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signInSignUpButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MA3-ST-GRs"/>
-                                    <segue destination="hcC-y3-m9y" kind="modal" identifier="toWelcome" id="CJa-pD-6ha"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4B-tP-UVL">
@@ -61,6 +60,7 @@
                         <outlet property="passwordInputField" destination="PqE-k1-GDp" id="Bcb-Df-Doo"/>
                         <outlet property="signInButton" destination="GCm-jt-Sda" id="ZzN-yp-vIV"/>
                         <outlet property="userEmailInputField" destination="kBl-Gz-VRD" id="rUg-g3-eVa"/>
+                        <segue destination="hcC-y3-m9y" kind="modal" identifier="toWelcome" id="Cqr-rn-P3n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -185,6 +185,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="imageHintImageView" destination="lGP-vq-1QR" id="j2j-Xh-haD"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToLocation" unwindAction="unwindToLocationClue:" id="Zjb-yk-N9a"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToWelcome" unwindAction="unwindToWelcome:" id="BDt-Ye-DyN"/>
                     </connections>
