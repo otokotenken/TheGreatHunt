@@ -117,6 +117,16 @@ FIRDatabaseReference *ref;
                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Sign Up"
                                                               style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                  if (error.code == 17007){
+                                                                      _errorDisplayLabel.text = @"This email is already in use.";
+                                                                      NSLog(@"email in use");
+                                                                  } else if (error.code == 17009){
+                                                                      _errorDisplayLabel.text = @"Incorrect Password";
+                                                                      NSLog(@"wrong password");
+                                                                  } else if (error.code == 17026){
+                                                                      _errorDisplayLabel.text = @"Please enter a 6 character password.";
+                                                                      NSLog(@"weak password");
+                                                                  }
                                                                   [self signUpUser];
                                                               }];
         UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Cancel"
