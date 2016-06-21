@@ -100,7 +100,7 @@ Clue *currentClue;
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
     NSLog(@"Now monitoring %@ \n\n ", region.identifier);
-    [_locationManager requestStateForRegion: region];
+    //[_locationManager requestStateForRegion: region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
