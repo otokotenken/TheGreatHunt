@@ -46,6 +46,10 @@ Clue *currentClue;
 	currentClue = [self getCurrentClue];
 	
 	_textHintLabel.text = [currentClue textHint];
+    // need to refactor and change the name of this label to the status label
+    NSString *statusLabelClueCountText = [Game getInstance].currentClue;
+    _debugStatusRegion.text = [NSString stringWithFormat:@"%@ of all the clues", statusLabelClueCountText];
+    
 	self.locationManager = [[CLLocationManager alloc]init];
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
 	self.locationManager.delegate = self;
@@ -70,6 +74,8 @@ Clue *currentClue;
 }
 
 - (void)clueRegionSetup{
+    //commented out lines with long and lat are the clue long and lat. 
+    
     float spanX = 0.01; // span of the map this is a 20mile radius. 1 degree == 69 miles, do math accordingly.
     float spanY = 0.01;
 //    _currentLocation = _locationManager.location; //current location
