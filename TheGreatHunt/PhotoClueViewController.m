@@ -43,7 +43,7 @@ FIRDatabaseReference *dbRef;
 		[self performSegueWithIdentifier:@"unwindToLocation" sender:sender];
 	}
 	else {
-        [self alertUserHasWon];
+        NSLog(@"Michael help meeeeee***************************");
 	}
 }
 - (IBAction)restartGameButton:(id)sender {
@@ -66,6 +66,7 @@ FIRDatabaseReference *dbRef;
 	
 	if(index == [[Game getInstance].cluesArray count]-1) {
 		//we done!
+        [self alertUserHasWon];
 		return NO;
 	}
 	else {

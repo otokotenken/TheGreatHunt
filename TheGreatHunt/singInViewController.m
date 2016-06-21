@@ -100,8 +100,6 @@ FIRDatabaseReference *ref;
 }
 
 
-
-
 //Sign in , Sign up and Sign out
 - (IBAction)signInSignUpButtonPress:(id)sender {
     [[FIRAuth auth] signInWithEmail:_userEmailInputField.text
