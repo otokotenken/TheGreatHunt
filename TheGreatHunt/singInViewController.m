@@ -5,7 +5,7 @@
 //  Created by ling toby on 6/13/16.
 //  Copyright © 2016 DetroitLabs. All rights reserved.
 //
-
+#import <UIKit/UIKit.h>
 #import "singInViewController.h"
 #import "Game.h"
 #import "Clue.h"
@@ -19,6 +19,15 @@ FIRDatabaseReference *ref;
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	ref = [[FIRDatabase database] reference];
+    
+    _signInButton.layer.cornerRadius = 15;
+    _signInButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
+    _signInButton.layer.borderWidth = 5.0f;
+
+    _switchUserButton.layer.cornerRadius = 15;
+    _switchUserButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
+    _switchUserButton.layer.borderWidth = 5.0f;
+    
 }
 
 - (void)didReceiveMemoryWarning {

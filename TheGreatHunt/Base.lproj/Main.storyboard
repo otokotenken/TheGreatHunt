@@ -21,7 +21,6 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fr-qY-eX1">
                                 <rect key="frame" x="62" y="112" width="193" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0WS-Eb-KYh">
@@ -40,10 +39,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCm-jt-Sda">
-                                <rect key="frame" x="136" y="380" width="47" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Sign In"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCm-jt-Sda">
+                                <rect key="frame" x="99" y="376" width="125" height="34"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.20392156862745098" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="22"/>
+                                <state key="normal" title="Sign In">
+                                    <color key="titleColor" red="0.97647058823529409" green="0.74509803921568629" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.97647058823529409" green="0.74509803921568629" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signInSignUpButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MA3-ST-GRs"/>
                                 </connections>
@@ -58,10 +71,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4B-tP-UVL">
-                                <rect key="frame" x="116" y="433" width="90" height="30"/>
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Switch Users"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4B-tP-UVL">
+                                <rect key="frame" x="99" y="429" width="125" height="34"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.20392156859999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                <state key="normal" title="Switch Users">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.74509803919999995" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="signOutSwitchUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eil-S3-woR"/>
                                 </connections>
@@ -72,11 +88,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.78431372549019607" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8fr-qY-eX1" firstAttribute="trailing" secondItem="kBl-Gz-VRD" secondAttribute="trailing" id="1Ft-Qt-14k"/>
                             <constraint firstItem="WR8-Lp-Zvb" firstAttribute="top" secondItem="kBl-Gz-VRD" secondAttribute="bottom" constant="44" id="76b-JS-Bvn"/>
-                            <constraint firstItem="GCm-jt-Sda" firstAttribute="top" secondItem="XDy-HW-JIc" secondAttribute="bottom" constant="49" id="8rL-av-aJv"/>
+                            <constraint firstItem="c4B-tP-UVL" firstAttribute="top" secondItem="GCm-jt-Sda" secondAttribute="bottom" constant="19" id="8en-XD-UFd"/>
                             <constraint firstItem="0WS-Eb-KYh" firstAttribute="top" secondItem="WR8-Lp-Zvb" secondAttribute="bottom" constant="8" symbolic="YES" id="8un-Ik-rd3"/>
                             <constraint firstItem="XDy-HW-JIc" firstAttribute="top" secondItem="0WS-Eb-KYh" secondAttribute="bottom" constant="18" id="Cvk-mQ-rIf"/>
                             <constraint firstItem="0WS-Eb-KYh" firstAttribute="leading" secondItem="XDy-HW-JIc" secondAttribute="leading" id="DxP-Jo-MtC"/>
@@ -92,13 +108,13 @@
                             <constraint firstItem="8fr-qY-eX1" firstAttribute="leading" secondItem="kBl-Gz-VRD" secondAttribute="leading" id="nBj-LZ-sft"/>
                             <constraint firstItem="8fr-qY-eX1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="92" id="qBF-o8-RSv"/>
                             <constraint firstItem="WR8-Lp-Zvb" firstAttribute="leading" secondItem="0WS-Eb-KYh" secondAttribute="leading" id="qwa-sl-fZ1"/>
-                            <constraint firstItem="c4B-tP-UVL" firstAttribute="top" secondItem="GCm-jt-Sda" secondAttribute="bottom" constant="23" id="wsP-lg-00E"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="errorDisplayLabel" destination="XDy-HW-JIc" id="hQQ-gy-pAb"/>
                         <outlet property="passwordInputField" destination="PqE-k1-GDp" id="Bcb-Df-Doo"/>
                         <outlet property="signInButton" destination="GCm-jt-Sda" id="ZzN-yp-vIV"/>
+                        <outlet property="switchUserButton" destination="c4B-tP-UVL" id="XMi-q7-dy9"/>
                         <outlet property="userEmailInputField" destination="kBl-Gz-VRD" id="rUg-g3-eVa"/>
                         <segue destination="hcC-y3-m9y" kind="modal" identifier="toWelcome" id="Cqr-rn-P3n"/>
                     </connections>
@@ -121,7 +137,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s3L-5e-nun">
                                 <rect key="frame" x="20" y="189" width="280" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.48627450980392156" green="0.85882352941176465" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Use the map clue to find the location.
 When you get close enough to the location you’ll see a picture of the real location.  
 Click Start to begin the hunt!</string>
@@ -130,14 +146,16 @@ Click Start to begin the hunt!</string>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEL-wJ-a64">
                                 <rect key="frame" x="121" y="372" width="78" height="30"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start Game"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.20392156859999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="0ny-wW-0hl" kind="modal" id="7P9-pl-8L6"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.48627450980392156" green="0.85882352941176465" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pEL-wJ-a64" firstAttribute="top" secondItem="s3L-5e-nun" secondAttribute="bottom" constant="55" id="0A8-ko-4Gt"/>
                             <constraint firstItem="s3L-5e-nun" firstAttribute="centerX" secondItem="Fb5-tw-xy8" secondAttribute="centerX" id="Gbt-Y0-Tr5"/>
@@ -170,7 +188,10 @@ Click Start to begin the hunt!</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j1-iA-Cad">
                                 <rect key="frame" x="96" y="528" width="128" height="30"/>
-                                <state key="normal" title="Cheat Button"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.20392156859999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cheat Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <segue destination="YRU-lO-ioB" kind="modal" identifier="locationToPhotoSegue" id="dgO-KK-EIC"/>
                                 </connections>
@@ -185,7 +206,7 @@ Click Start to begin the hunt!</string>
                                 <rect key="frame" x="33" y="177" width="255" height="234"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.48627450980392156" green="0.85882352941176465" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2j1-iA-Cad" firstAttribute="top" secondItem="uXF-tU-Xo1" secondAttribute="bottom" constant="8" id="ALa-SK-P7V"/>
                             <constraint firstItem="2j1-iA-Cad" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="OOI-hr-Ley"/>
