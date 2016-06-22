@@ -8,9 +8,7 @@
 
 #import "LocationClueViewController.h"
 #import <AVFoundation/AVFoundation.h>
-
 @import MapKit;
-
 
 @interface LocationClueViewController ()
 
@@ -111,11 +109,10 @@ Clue *currentClue;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
+    [self playSound];
     NSLog(@"Entered region %@ \n", region.identifier);
     _debugStatusRegion.text = @"You Have Entered the Clue Zone";
     _debugStatusRegion.textColor = [UIColor greenColor];
-    
-    [self playSound];
     
     [self performSegueWithIdentifier:@"locationToPhotoSegue" sender:self];
 }
@@ -130,7 +127,6 @@ Clue *currentClue;
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region{
     // When regions are initialized, see if we are already within the geofence.
     if (state == CLRegionStateInside){
-        [self playSound];
         NSLog(@"Already in the region %@ \n", region.identifier);
         _debugStatusRegion.text = @"You are already in the Clue Zone";
         _debugStatusRegion.textColor = [UIColor blueColor];
@@ -139,14 +135,21 @@ Clue *currentClue;
     
 }
 
-
+<<<<<<< HEAD
 -(void)playSound{
-    NSString *path = [NSString stringWithFormat:@"%@/ding.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"ding"
+                                                              ofType:@"mp3"];
+    NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+    NSLog(@"%@",soundFileURL);
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
     [_audioPlayer play];
 }
 
+
+
+=======
+>>>>>>> master
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
