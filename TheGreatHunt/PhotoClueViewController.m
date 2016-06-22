@@ -10,6 +10,9 @@
 @import Firebase;
 
 @interface PhotoClueViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *nextClueButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *restartButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageHintImageView;
 @end
@@ -21,6 +24,14 @@ FIRDatabaseReference *dbRef;
     [super viewDidLoad];
 	dbRef = [[FIRDatabase database] reference];
     // Do any additional setup after loading the view.
+    
+    _nextClueButton.layer.cornerRadius = 15;
+    _nextClueButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
+    _nextClueButton.layer.borderWidth = 3.0f;
+    
+    _restartButton.layer.cornerRadius = 15;
+    _restartButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
+    _restartButton.layer.borderWidth = 3.0f;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

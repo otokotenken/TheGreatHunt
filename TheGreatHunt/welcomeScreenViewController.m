@@ -9,6 +9,7 @@
 #import "welcomeScreenViewController.h"
 
 @interface welcomeScreenViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *startGameButton;
 
 @end
 
@@ -16,8 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
-    // Do any additional setup after loading the view.
+    
+    _startGameButton.layer.cornerRadius = 15;
+    _startGameButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
+    _startGameButton.layer.borderWidth = 3.0f;
+
 }
 
 - (void)didReceiveMemoryWarning {
