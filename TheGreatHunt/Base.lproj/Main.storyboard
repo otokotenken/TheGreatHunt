@@ -136,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEL-wJ-a64">
-                                <rect key="frame" x="110" y="340" width="101" height="38"/>
+                                <rect key="frame" x="107" y="340" width="106" height="38"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.20392156859999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                                 <state key="normal" title="Start Game">
@@ -167,6 +167,9 @@ Click Start to begin the hunt!</string>
                             <constraint firstItem="s3L-5e-nun" firstAttribute="top" secondItem="qwZ-vk-sBX" secondAttribute="bottom" constant="97" id="o6d-40-bhj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startGameButton" destination="pEL-wJ-a64" id="gxo-ZA-RBd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nah-zR-7Au" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -185,7 +188,7 @@ Click Start to begin the hunt!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="status label status label status label status label " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXF-tU-Xo1">
-                                <rect key="frame" x="33" y="459" width="255" height="61"/>
+                                <rect key="frame" x="33" y="441" width="255" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -193,21 +196,22 @@ Click Start to begin the hunt!</string>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j1-iA-Cad">
                                 <rect key="frame" x="96" y="528" width="128" height="30"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.20392156859999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                                 <state key="normal" title="Cheat Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.97647058819999999" green="0.74509803919999995" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="YRU-lO-ioB" kind="modal" identifier="locationToPhotoSegue" id="dgO-KK-EIC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Text Hint Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDG-Ue-S3K">
-                                <rect key="frame" x="33" y="20" width="255" height="137"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="33" y="20" width="255" height="98"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Cds-SJ-vHY">
-                                <rect key="frame" x="33" y="177" width="255" height="234"/>
+                                <rect key="frame" x="33" y="140" width="255" height="234"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.0078431372549019607" green="0.78431372549019607" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,6 +227,7 @@ Click Start to begin the hunt!</string>
                     </view>
                     <navigationItem key="navigationItem" id="zam-hs-qHh"/>
                     <connections>
+                        <outlet property="cheatButton" destination="2j1-iA-Cad" id="HsZ-mk-2QX"/>
                         <outlet property="debugStatusRegion" destination="uXF-tU-Xo1" id="TUo-45-IgN"/>
                         <outlet property="mapView" destination="Cds-SJ-vHY" id="Ohh-iC-Lam"/>
                         <outlet property="textHintLabel" destination="sDG-Ue-S3K" id="4Xj-I7-rcU"/>
