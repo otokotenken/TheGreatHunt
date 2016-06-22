@@ -17,8 +17,8 @@
 		4386E69F1D0F31AB0075B96E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4386E69E1D0F31AB0075B96E /* Assets.xcassets */; };
 		4386E6A21D0F31AB0075B96E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4386E6A01D0F31AB0075B96E /* LaunchScreen.storyboard */; };
 		43B6FE5E1D12F34F0089185C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43B6FE5D1D12F34E0089185C /* GoogleService-Info.plist */; };
-		9000B93D1D1AD75200A39858 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9000B93C1D1AD75200A39858 /* ding.mp3 */; };
-		9000B93F1D1AD78900A39858 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9000B93E1D1AD78900A39858 /* AVFoundation.framework */; };
+		9000B93B1D1ACE3500A39858 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9000B93A1D1ACE3500A39858 /* AVFoundation.framework */; };
+		906E0A5B1D19DB3600F5EE42 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 906E0A5A1D19DB3600F5EE42 /* ding.mp3 */; };
 		9086C89D1D0F47F30008C532 /* singInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C89C1D0F47F30008C532 /* singInViewController.m */; };
 		9086C8A01D0F484D0008C532 /* welcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C89F1D0F484D0008C532 /* welcomeScreenViewController.m */; };
 		9086C8A31D0F4E660008C532 /* LocationClueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086C8A21D0F4E660008C532 /* LocationClueViewController.m */; };
@@ -46,8 +46,8 @@
 		4386E6A31D0F31AB0075B96E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43B6FE5D1D12F34E0089185C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		722BEDA3F32E88403EBFF0FB /* Pods-TheGreatHunt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGreatHunt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheGreatHunt/Pods-TheGreatHunt.debug.xcconfig"; sourceTree = "<group>"; };
-		9000B93C1D1AD75200A39858 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ding.mp3; path = Assets.xcassets/ding.mp3; sourceTree = "<group>"; };
-		9000B93E1D1AD78900A39858 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9000B93A1D1ACE3500A39858 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		906E0A5A1D19DB3600F5EE42 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = ding.mp3; path = Assets.xcassets/ding.mp3; sourceTree = "<group>"; };
 		9086C89B1D0F47F30008C532 /* singInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = singInViewController.h; sourceTree = "<group>"; };
 		9086C89C1D0F47F30008C532 /* singInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = singInViewController.m; sourceTree = "<group>"; };
 		9086C89E1D0F484D0008C532 /* welcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = welcomeScreenViewController.h; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9000B93F1D1AD78900A39858 /* AVFoundation.framework in Frameworks */,
+				9000B93B1D1ACE3500A39858 /* AVFoundation.framework in Frameworks */,
 				426536CF1D1832A000206FAD /* MapKit.framework in Frameworks */,
 				EF19EEC04474FC1225AACDC2 /* libPods-TheGreatHunt.a in Frameworks */,
 			);
@@ -77,7 +77,7 @@
 		2A2F2B11CB6CF727230EFFF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9000B93E1D1AD78900A39858 /* AVFoundation.framework */,
+				9000B93A1D1ACE3500A39858 /* AVFoundation.framework */,
 				426536CE1D1832A000206FAD /* MapKit.framework */,
 				0346330881FD82DC9CA9EA20 /* libPods-TheGreatHunt.a */,
 			);
@@ -140,6 +140,7 @@
 				43645D541D108B1400993C32 /* Models */,
 				43645D551D108B1F00993C32 /* Controllers */,
 				4386E69B1D0F31AB0075B96E /* Main.storyboard */,
+				906E0A5A1D19DB3600F5EE42 /* ding.mp3 */,
 				432DCAC31D186C6D00B20397 /* testLocation.gpx */,
 				4386E69E1D0F31AB0075B96E /* Assets.xcassets */,
 				4386E6A01D0F31AB0075B96E /* LaunchScreen.storyboard */,
@@ -152,7 +153,6 @@
 		4386E6921D0F31AB0075B96E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9000B93C1D1AD75200A39858 /* ding.mp3 */,
 				4386E6931D0F31AB0075B96E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -174,7 +174,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4386E6A61D0F31AB0075B96E /* Build configuration list for PBXNativeTarget "TheGreatHunt" */;
 			buildPhases = (
-				70FC6115521824E5881500DD /* [CP] Check Pods Manifest.lock */,
+<<<<<<< HEAD
+=======
+				70FC6115521824E5881500DD /* 📦 Check Pods Manifest.lock */,
+>>>>>>> master
 				6099D3EA7F07436951E61ED4 /* [CP] Check Pods Manifest.lock */,
 				F004DBF6925BEA91613F617A /* [CP] Check Pods Manifest.lock */,
 				4386E68B1D0F31AB0075B96E /* Sources */,
@@ -233,7 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4386E6A21D0F31AB0075B96E /* LaunchScreen.storyboard in Resources */,
-				9000B93D1D1AD75200A39858 /* ding.mp3 in Resources */,
+				906E0A5B1D19DB3600F5EE42 /* ding.mp3 in Resources */,
 				43B6FE5E1D12F34F0089185C /* GoogleService-Info.plist in Resources */,
 				4386E69F1D0F31AB0075B96E /* Assets.xcassets in Resources */,
 				4386E69D1D0F31AB0075B96E /* Main.storyboard in Resources */,
@@ -304,6 +307,8 @@
 			showEnvVarsInLog = 0;
 		};
 		6099D3EA7F07436951E61ED4 /* [CP] Check Pods Manifest.lock */ = {
+<<<<<<< HEAD
+=======
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -318,7 +323,8 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		70FC6115521824E5881500DD /* [CP] Check Pods Manifest.lock */ = {
+		70FC6115521824E5881500DD /* 📦 Check Pods Manifest.lock */ = {
+>>>>>>> master
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
