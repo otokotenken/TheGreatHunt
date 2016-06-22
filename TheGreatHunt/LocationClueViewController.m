@@ -20,6 +20,7 @@
 
 @property (strong, nonatomic) CLLocation *currentLocation;
 @property (weak, nonatomic) IBOutlet UILabel *debugStatusRegion;
+@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
@@ -29,6 +30,12 @@ Clue *currentClue;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Create the stop watch timer that fires every 100 ms
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                  target:self
+                                                selector:@selector(runTimerUpdateGame)
+                                                userInfo:nil
+                                                 repeats:YES];
 //    NSString *currentClueName =[[Game getInstance] currentClue];
 //    for (Clue *obj in [[Game getInstance] cluesArray]){
 //        if ([[obj name] isEqualToString:currentClueName]){
@@ -50,6 +57,7 @@ Clue *currentClue;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
 	currentClue = [self getCurrentClue];
 	
 	_textHintLabel.text = [currentClue textHint];
@@ -66,6 +74,11 @@ Clue *currentClue;
 	
 	[_mapView setShowsUserLocation:YES];
 	[_mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
+}
+
+
+-(void)runTimerUpdateGame{
+    [[Game getInstance] timerSubstract];
 }
 
 -(Clue *)getCurrentClue {

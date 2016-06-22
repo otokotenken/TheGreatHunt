@@ -54,6 +54,7 @@ FIRDatabaseReference *dbRef;
 }
 - (IBAction)restartGameButton:(id)sender {
 	[self moveToFirstClue];
+    [Game getInstance].gameTimer= @"00:00:00";
 	[self performSegueWithIdentifier:@"unwindToWelcome" sender:sender];
 }
 
@@ -63,6 +64,7 @@ FIRDatabaseReference *dbRef;
 	[Game getInstance].currentClue = firstClue.name;
 	
 	[self updateCurrentClueInFirebaseWithName:firstClue.name];
+    [self updateGameTimerInFirebaseWithName:[[Game getInstance] gameTimer]];
 }
 
 -(BOOL)moveToNextClue {
@@ -96,6 +98,18 @@ FIRDatabaseReference *dbRef;
 				 NSLog(@"Data saved successfully.");
 			 }
 		 }];
+}
+
+-(void)updateGameTimerInFirebaseWithName:(NSString *) newGameTimer {
+    //update in firebase
+    [dbRef updateChildValues:@{[NSString stringWithFormat:@"%@/gameTimer", [Game getInstance].name]:newGameTimer}
+         withCompletionBlock:^(NSError *error, FIRDatabaseReference *ref) {
+             if (error) {
+                 NSLog(@"Data could not be saved: %@", error);
+             } else {
+                 NSLog(@"Data saved successfully.");
+             }
+         }];
 }
 
 
