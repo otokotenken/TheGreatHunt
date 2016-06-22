@@ -113,7 +113,7 @@ FIRDatabaseReference *ref;
 -(void)decideSignInOrSignUp :(NSError *)error {
     if(error){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not Registered Yet?"
-                                                                       message:@"Would You Like To Sign Up?"
+                                                                       message:@" Would You Like To Sign Up? "
                                                                 preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Sign Up"
                                                               style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -126,16 +126,32 @@ FIRDatabaseReference *ref;
                                                                   } else if (error.code == 17026){
                                                                       _errorDisplayLabel.text = @"Please enter a 6 character password.";
                                                                       NSLog(@"weak password");
-                                                                  }
-                                                                  [self signUpUser];
+                                                                  } else {
+                                                                      [self signUpUser];}
                                                               }];
+        
+        NSMutableAttributedString *hogan = [[NSMutableAttributedString alloc] initWithString:@"\n Not Registered Yet?\n\n"];
+        [hogan addAttribute:NSFontAttributeName
+                      value:[UIFont systemFontOfSize:34.0]
+                      range:NSMakeRange(1, 21)];
+        [alert setValue:hogan forKey:@"attributedTitle"];
+        
+        NSMutableAttributedString *messageChange = [[NSMutableAttributedString alloc] initWithString:@"Would You Like to Sign Up? "];
+        [messageChange addAttribute:NSFontAttributeName
+                      value:[UIFont systemFontOfSize:18.0]
+                      range:NSMakeRange(0, 26)];
+        [alert setValue:messageChange forKey:@"attributedMessage"];
+        
         UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Cancel"
                                                                style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                                                    _userEmailInputField.text = @"";
                                                                    _passwordInputField.text = @"";
                                                                }];
+        
         [alert addAction:firstAction];
         [alert addAction:secondAction];
+//        alert.view.backgroundColor = [UIColor blueColor];
+        alert.view.tintColor = [UIColor purpleColor];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
 		[self retrieveGameDataFromDBRef:ref];

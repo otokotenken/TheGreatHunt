@@ -111,6 +111,9 @@ FIRDatabaseReference *dbRef;
                                                         [self performSegueWithIdentifier:@"unwindToWelcome" sender: self];
                                                     }];
         [alert addAction:firstAction];
+    alert.view.backgroundColor = [UIColor redColor];
+    alert.view.tintColor = [UIColor orangeColor];
+//    alert.view.layer.cornerRadius = 0.5 * [alert.view.bounds.size.width];
         [self presentViewController:alert animated:YES completion:nil];
     
 }
