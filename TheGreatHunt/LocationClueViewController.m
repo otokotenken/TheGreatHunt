@@ -26,7 +26,7 @@ Clue *currentClue;
     
     _cheatButton.layer.cornerRadius = 15;
     _cheatButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
-    _cheatButton.layer.borderWidth = 5.0f;
+    _cheatButton.layer.borderWidth = 3.0f;
     
 //    NSString *currentClueName =[[Game getInstance] currentClue];
 //    for (Clue *obj in [[Game getInstance] cluesArray]){

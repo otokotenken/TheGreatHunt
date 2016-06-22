@@ -22,11 +22,11 @@ FIRDatabaseReference *ref;
     
     _signInButton.layer.cornerRadius = 15;
     _signInButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
-    _signInButton.layer.borderWidth = 5.0f;
+    _signInButton.layer.borderWidth = 3.0f;
 
     _switchUserButton.layer.cornerRadius = 15;
     _switchUserButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
-    _switchUserButton.layer.borderWidth = 5.0f;
+    _switchUserButton.layer.borderWidth = 3.0f;
     
 }
 
