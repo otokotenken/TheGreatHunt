@@ -135,32 +135,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s3L-5e-nun">
-                                <rect key="frame" x="20" y="189" width="280" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEL-wJ-a64">
+                                <rect key="frame" x="110" y="340" width="101" height="38"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.20392156859999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
+                                <state key="normal" title="Start Game">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.74509803919999995" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0ny-wW-0hl" kind="modal" id="7P9-pl-8L6"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s3L-5e-nun">
+                                <rect key="frame" x="20" y="117" width="280" height="102"/>
                                 <color key="backgroundColor" red="0.48627450980392156" green="0.85882352941176465" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="60p-0q-eek"/>
+                                    <constraint firstAttribute="height" constant="102" id="J9K-rf-N0I"/>
+                                </constraints>
                                 <string key="text">Use the map clue to find the location.
 When you get close enough to the location you’ll see a picture of the real location.  
 Click Start to begin the hunt!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEL-wJ-a64">
-                                <rect key="frame" x="121" y="372" width="78" height="30"/>
-                                <color key="backgroundColor" red="0.96078431369999995" green="0.20392156859999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start Game">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="0ny-wW-0hl" kind="modal" id="7P9-pl-8L6"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.48627450980392156" green="0.85882352941176465" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.78431372549019607" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pEL-wJ-a64" firstAttribute="top" secondItem="s3L-5e-nun" secondAttribute="bottom" constant="55" id="0A8-ko-4Gt"/>
                             <constraint firstItem="s3L-5e-nun" firstAttribute="centerX" secondItem="Fb5-tw-xy8" secondAttribute="centerX" id="Gbt-Y0-Tr5"/>
                             <constraint firstItem="pEL-wJ-a64" firstAttribute="centerX" secondItem="Fb5-tw-xy8" secondAttribute="centerX" id="ISU-iY-47D"/>
-                            <constraint firstItem="s3L-5e-nun" firstAttribute="centerY" secondItem="Fb5-tw-xy8" secondAttribute="centerY" id="c9H-pE-BZ2"/>
+                            <constraint firstItem="s3L-5e-nun" firstAttribute="top" secondItem="qwZ-vk-sBX" secondAttribute="bottom" constant="97" id="o6d-40-bhj"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -206,7 +210,7 @@ Click Start to begin the hunt!</string>
                                 <rect key="frame" x="33" y="177" width="255" height="234"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" red="0.48627450980392156" green="0.85882352941176465" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.78431372549019607" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2j1-iA-Cad" firstAttribute="top" secondItem="uXF-tU-Xo1" secondAttribute="bottom" constant="8" id="ALa-SK-P7V"/>
                             <constraint firstItem="2j1-iA-Cad" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="OOI-hr-Ley"/>
