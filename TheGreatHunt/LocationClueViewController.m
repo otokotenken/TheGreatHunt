@@ -63,6 +63,7 @@ Clue *currentClue;
     // need to refactor and change the name of this label to the status label
     NSString *statusLabelClueCountText = [Game getInstance].currentClue;
     _debugStatusRegion.text = [NSString stringWithFormat:@"%@ of %lu clues", statusLabelClueCountText, [Game getInstance].cluesArray.count];
+    _debugStatusRegion.textColor = [UIColor whiteColor];
     
 	self.locationManager = [[CLLocationManager alloc]init];
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
@@ -119,8 +120,6 @@ Clue *currentClue;
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
     NSLog(@"Entered region %@ \n", region.identifier);
-    _debugStatusRegion.text = @"You Have Entered the Clue Zone";
-    _debugStatusRegion.textColor = [UIColor greenColor];
     
     [self playSound];
     
@@ -129,8 +128,6 @@ Clue *currentClue;
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region{
     NSLog(@"EXITED region %@ \n", region.identifier);
-    _debugStatusRegion.text = @"You Have left the Clue Zone";
-    _debugStatusRegion.textColor = [UIColor redColor];
 }
 
 // Determine current state - if person is already inside the Region
@@ -139,8 +136,7 @@ Clue *currentClue;
     if (state == CLRegionStateInside){
         [self playSound];
         NSLog(@"Already in the region %@ \n", region.identifier);
-        _debugStatusRegion.text = @"You are already in the Clue Zone";
-        _debugStatusRegion.textColor = [UIColor blueColor];
+  
        [self performSegueWithIdentifier:@"locationToPhotoSegue" sender:self];
     }
     
