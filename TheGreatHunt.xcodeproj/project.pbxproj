@@ -206,7 +206,7 @@
 				TargetAttributes = {
 					4386E68E1D0F31AB0075B96E = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9FYN4E4B36;
+						DevelopmentTeam = 66W45F4PH4;
 					};
 				};
 			};
@@ -496,7 +496,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TheGreatHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.detroitlabs.TheGreatHunt;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.detroitlabs.TheGreatHunt-anna";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -511,7 +511,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TheGreatHunt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.detroitlabs.TheGreatHunt;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.detroitlabs.TheGreatHunt-anna";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

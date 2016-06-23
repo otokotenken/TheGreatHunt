@@ -293,14 +293,11 @@ Click Start to begin the hunt!</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backgroundImageStart" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-iV-aeh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGP-vq-1QR">
-                                <rect key="frame" x="30" y="48" width="262" height="168"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tP-dv-hJx">
-                                <rect key="frame" x="29" y="241" width="262" height="168"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tP-dv-hJx">
+                                <rect key="frame" x="20" y="219" width="280" height="227"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZh-H5-Vsd">
-                                <rect key="frame" x="165" y="474" width="135" height="30"/>
+                                <rect key="frame" x="165" y="518" width="135" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                                 <state key="normal" title="Restart Game">
@@ -311,7 +308,7 @@ Click Start to begin the hunt!</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKr-qS-cug">
-                                <rect key="frame" x="20" y="474" width="126" height="30"/>
+                                <rect key="frame" x="20" y="518" width="126" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="20"/>
                                 <state key="normal" title="Next Clue">
@@ -321,21 +318,61 @@ Click Start to begin the hunt!</string>
                                     <action selector="determineActionButton:" destination="YRU-lO-ioB" eventType="touchUpInside" id="IqM-l0-OkG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-lE-lGF">
+                                <rect key="frame" x="30" y="462" width="77" height="30"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="YRU-lO-ioB" eventType="touchUpInside" id="eGG-ZF-5Uh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shz-Pq-Pvm">
+                                <rect key="frame" x="218" y="462" width="82" height="30"/>
+                                <state key="normal" title="Library">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="choosePhoto:" destination="YRU-lO-ioB" eventType="touchUpInside" id="dpl-oA-7ZN"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGP-vq-1QR">
+                                <rect key="frame" x="29" y="20" width="262" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="ONH-QI-iHb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="9lF-3z-79M" firstAttribute="top" secondItem="mZh-H5-Vsd" secondAttribute="bottom" constant="20" id="44q-8u-Vdo"/>
                             <constraint firstItem="j2K-iV-aeh" firstAttribute="top" secondItem="GXI-hz-YjO" secondAttribute="topMargin" id="AYG-u9-yuY"/>
+                            <constraint firstItem="l1a-lE-lGF" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="10" id="Crc-if-vUv"/>
+                            <constraint firstItem="9lF-3z-79M" firstAttribute="top" secondItem="pKr-qS-cug" secondAttribute="bottom" constant="20" id="EHj-JM-cLu"/>
                             <constraint firstItem="j2K-iV-aeh" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="-20" id="F21-sk-dxc"/>
+                            <constraint firstItem="shz-Pq-Pvm" firstAttribute="trailing" secondItem="GXI-hz-YjO" secondAttribute="trailingMargin" id="LEG-o1-4Yd"/>
                             <constraint firstItem="mZh-H5-Vsd" firstAttribute="leading" secondItem="pKr-qS-cug" secondAttribute="trailing" constant="10" id="SLQ-sV-NGc"/>
+                            <constraint firstItem="lGP-vq-1QR" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="9" id="WSg-3Z-c0u"/>
+                            <constraint firstItem="pKr-qS-cug" firstAttribute="top" secondItem="l1a-lE-lGF" secondAttribute="bottom" constant="26" id="cHG-ky-GbF"/>
+                            <constraint firstItem="lGP-vq-1QR" firstAttribute="top" secondItem="ikb-OY-kmn" secondAttribute="bottom" id="dCg-PE-mvX"/>
+                            <constraint firstItem="2tP-dv-hJx" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" id="e8T-Pl-hN3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j2K-iV-aeh" secondAttribute="trailing" constant="-20" id="eap-De-yR3"/>
+                            <constraint firstItem="pKr-qS-cug" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" id="g9t-4T-iTx"/>
+                            <constraint firstItem="2tP-dv-hJx" firstAttribute="trailing" secondItem="GXI-hz-YjO" secondAttribute="trailingMargin" id="jHr-OQ-XEF"/>
                             <constraint firstItem="9lF-3z-79M" firstAttribute="top" secondItem="j2K-iV-aeh" secondAttribute="bottom" id="od1-We-2wB"/>
+                            <constraint firstItem="mZh-H5-Vsd" firstAttribute="top" secondItem="shz-Pq-Pvm" secondAttribute="bottom" constant="26" id="tFg-Jw-neG"/>
+                            <constraint firstItem="mZh-H5-Vsd" firstAttribute="trailing" secondItem="GXI-hz-YjO" secondAttribute="trailingMargin" id="tM1-C9-Qlt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lGP-vq-1QR" secondAttribute="trailing" constant="9" id="vOl-yF-dFu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chooseFromLibraryButton" destination="shz-Pq-Pvm" id="XaL-0Y-hIf"/>
                         <outlet property="imageHintImageView" destination="lGP-vq-1QR" id="j2j-Xh-haD"/>
+                        <outlet property="imageView" destination="2tP-dv-hJx" id="wEr-2W-PCs"/>
                         <outlet property="nextClueButton" destination="pKr-qS-cug" id="0Ii-ew-ixQ"/>
                         <outlet property="photoBackImage" destination="j2K-iV-aeh" id="h4J-7U-9e5"/>
                         <outlet property="restartButton" destination="mZh-H5-Vsd" id="w3V-s6-oqg"/>
+                        <outlet property="takePhotoButton" destination="l1a-lE-lGF" id="kIE-lK-iyS"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToLocation" unwindAction="unwindToLocationClue:" id="Zjb-yk-N9a"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToWelcome" unwindAction="unwindToWelcome:" id="BDt-Ye-DyN"/>
                     </connections>

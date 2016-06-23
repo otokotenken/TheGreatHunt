@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GameController.h"
 
-@interface PhotoClueViewController : UIViewController <GameController>
+@interface PhotoClueViewController : UIViewController <GameController, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoBackImage;
 
