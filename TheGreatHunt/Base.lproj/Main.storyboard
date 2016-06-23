@@ -293,6 +293,12 @@ Click Start to begin the hunt!</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backgroundImageStart" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-iV-aeh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGP-vq-1QR">
+                                <rect key="frame" x="29" y="20" width="262" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="ONH-QI-iHb"/>
+                                </constraints>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tP-dv-hJx">
                                 <rect key="frame" x="20" y="219" width="280" height="227"/>
                             </imageView>
@@ -318,15 +324,6 @@ Click Start to begin the hunt!</string>
                                     <action selector="determineActionButton:" destination="YRU-lO-ioB" eventType="touchUpInside" id="IqM-l0-OkG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-lE-lGF">
-                                <rect key="frame" x="30" y="462" width="77" height="30"/>
-                                <state key="normal" title="Take Photo">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="takePhoto:" destination="YRU-lO-ioB" eventType="touchUpInside" id="eGG-ZF-5Uh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shz-Pq-Pvm">
                                 <rect key="frame" x="218" y="462" width="82" height="30"/>
                                 <state key="normal" title="Library">
@@ -336,12 +333,15 @@ Click Start to begin the hunt!</string>
                                     <action selector="choosePhoto:" destination="YRU-lO-ioB" eventType="touchUpInside" id="dpl-oA-7ZN"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGP-vq-1QR">
-                                <rect key="frame" x="29" y="20" width="262" height="168"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="168" id="ONH-QI-iHb"/>
-                                </constraints>
-                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-lE-lGF">
+                                <rect key="frame" x="29" y="462" width="77" height="30"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="YRU-lO-ioB" eventType="touchUpInside" id="eGG-ZF-5Uh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

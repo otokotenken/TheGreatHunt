@@ -37,6 +37,7 @@ UIImagePickerController *appImagePicker;
                                                     otherButtonTitles: nil];
         
         [myAlertView show];
+        appImagePicker = [self createAppImagePicker];
     } else {
         appImagePicker = [self createAppImagePicker];
     }
