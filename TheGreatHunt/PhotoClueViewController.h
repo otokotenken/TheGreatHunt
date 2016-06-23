@@ -11,4 +11,6 @@
 
 @interface PhotoClueViewController : UIViewController <GameController>
 
+@property (weak, nonatomic) IBOutlet UIImageView *photoBackImage;
+
 @end

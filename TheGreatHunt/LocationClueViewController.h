@@ -17,5 +17,6 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (strong, nonatomic) IBOutlet UILabel *textHintLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *locationBackImage;
 
 @end

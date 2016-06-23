@@ -10,5 +10,6 @@
 #import "GameController.h"
 
 @interface welcomeScreenViewController : UIViewController <GameController>
+@property (weak, nonatomic) IBOutlet UIImageView *welcomeImage;
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,9 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backImageFirst" translatesAutoresizingMaskIntoConstraints="NO" id="CiC-wH-nLP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fr-qY-eX1">
                                 <rect key="frame" x="62" y="112" width="193" height="21"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -36,7 +39,7 @@
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WR8-Lp-Zvb">
                                 <rect key="frame" x="62" y="215" width="193" height="21"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -98,8 +101,10 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8fr-qY-eX1" firstAttribute="trailing" secondItem="kBl-Gz-VRD" secondAttribute="trailing" id="1Ft-Qt-14k"/>
+                            <constraint firstItem="CiC-wH-nLP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="2Jp-ZT-fZF"/>
                             <constraint firstItem="WR8-Lp-Zvb" firstAttribute="top" secondItem="kBl-Gz-VRD" secondAttribute="bottom" constant="44" id="76b-JS-Bvn"/>
                             <constraint firstItem="c4B-tP-UVL" firstAttribute="top" secondItem="GCm-jt-Sda" secondAttribute="bottom" constant="19" id="8en-XD-UFd"/>
                             <constraint firstItem="0WS-Eb-KYh" firstAttribute="top" secondItem="WR8-Lp-Zvb" secondAttribute="bottom" constant="8" symbolic="YES" id="8un-Ik-rd3"/>
@@ -107,12 +112,15 @@
                             <constraint firstItem="0WS-Eb-KYh" firstAttribute="leading" secondItem="XDy-HW-JIc" secondAttribute="leading" id="DxP-Jo-MtC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8fr-qY-eX1" secondAttribute="trailing" constant="49" id="H2c-TY-cAN"/>
                             <constraint firstItem="WR8-Lp-Zvb" firstAttribute="trailing" secondItem="0WS-Eb-KYh" secondAttribute="trailing" id="I4n-fH-cre"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CiC-wH-nLP" secondAttribute="bottom" id="Lzy-u7-3j5"/>
                             <constraint firstItem="kBl-Gz-VRD" firstAttribute="trailing" secondItem="WR8-Lp-Zvb" secondAttribute="trailing" id="OvC-Cz-2eI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CiC-wH-nLP" secondAttribute="trailing" constant="-20" id="VOp-5u-0hh"/>
                             <constraint firstItem="0WS-Eb-KYh" firstAttribute="trailing" secondItem="XDy-HW-JIc" secondAttribute="trailing" id="Vfd-nN-Igo"/>
                             <constraint firstItem="kBl-Gz-VRD" firstAttribute="top" secondItem="8fr-qY-eX1" secondAttribute="bottom" constant="8" symbolic="YES" id="adM-HS-aSe"/>
                             <constraint firstItem="kBl-Gz-VRD" firstAttribute="leading" secondItem="WR8-Lp-Zvb" secondAttribute="leading" id="dh8-jW-HHB"/>
                             <constraint firstItem="c4B-tP-UVL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ec3-6T-kMD"/>
                             <constraint firstItem="GCm-jt-Sda" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hes-XI-LCq"/>
+                            <constraint firstItem="CiC-wH-nLP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="jnA-Qj-jHb"/>
                             <constraint firstItem="8fr-qY-eX1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="46" id="kq3-4V-4JS"/>
                             <constraint firstItem="8fr-qY-eX1" firstAttribute="leading" secondItem="kBl-Gz-VRD" secondAttribute="leading" id="nBj-LZ-sft"/>
                             <constraint firstItem="8fr-qY-eX1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="92" id="qBF-o8-RSv"/>
@@ -123,6 +131,7 @@
                         <outlet property="errorDisplayLabel" destination="XDy-HW-JIc" id="hQQ-gy-pAb"/>
                         <outlet property="passwordInputField" destination="PqE-k1-GDp" id="Bcb-Df-Doo"/>
                         <outlet property="signInButton" destination="GCm-jt-Sda" id="ZzN-yp-vIV"/>
+                        <outlet property="signInImageView" destination="CiC-wH-nLP" id="EP8-Qe-qlR"/>
                         <outlet property="switchUserButton" destination="c4B-tP-UVL" id="XMi-q7-dy9"/>
                         <outlet property="userEmailInputField" destination="kBl-Gz-VRD" id="rUg-g3-eVa"/>
                         <segue destination="hcC-y3-m9y" kind="modal" identifier="toWelcome" id="Cqr-rn-P3n"/>
@@ -144,12 +153,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="blueGreenBack" translatesAutoresizingMaskIntoConstraints="NO" id="X9n-WT-s18">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s3L-5e-nun">
-                                <rect key="frame" x="20" y="117" width="280" height="155"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="117" width="280" height="196"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="60p-0q-eek"/>
-                                    <constraint firstAttribute="height" constant="155" id="J9K-rf-N0I"/>
+                                    <constraint firstAttribute="height" constant="196" id="J9K-rf-N0I"/>
                                 </constraints>
                                 <string key="text">Use the map clue to find the location.
 When you get close to the location you’ll see a picture to help you find the right spot.  
@@ -157,7 +169,7 @@ When you get close to the location you’ll see a picture to help you find the r
 
 Click Start to begin the hunt!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEL-wJ-a64">
@@ -174,13 +186,18 @@ Click Start to begin the hunt!</string>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="X9n-WT-s18" firstAttribute="leading" secondItem="Fb5-tw-xy8" secondAttribute="leadingMargin" constant="-20" id="3GE-uB-PWx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X9n-WT-s18" secondAttribute="trailing" constant="-20" id="60P-P5-ZZw"/>
+                            <constraint firstItem="X9n-WT-s18" firstAttribute="top" secondItem="Fb5-tw-xy8" secondAttribute="topMargin" id="BYV-Xd-fOK"/>
                             <constraint firstItem="s3L-5e-nun" firstAttribute="centerX" secondItem="Fb5-tw-xy8" secondAttribute="centerX" id="Gbt-Y0-Tr5"/>
                             <constraint firstItem="pEL-wJ-a64" firstAttribute="centerX" secondItem="Fb5-tw-xy8" secondAttribute="centerX" id="ISU-iY-47D"/>
+                            <constraint firstItem="Igt-5e-7nd" firstAttribute="top" secondItem="X9n-WT-s18" secondAttribute="bottom" id="c2p-jC-hTT"/>
                             <constraint firstItem="s3L-5e-nun" firstAttribute="top" secondItem="qwZ-vk-sBX" secondAttribute="bottom" constant="97" id="o6d-40-bhj"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="startGameButton" destination="pEL-wJ-a64" id="gxo-ZA-RBd"/>
+                        <outlet property="welcomeImage" destination="X9n-WT-s18" id="Ek3-K5-c6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nah-zR-7Au" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,6 +216,9 @@ Click Start to begin the hunt!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="blueorangeBack" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-M0-9vV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="status label status label status label status label " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXF-tU-Xo1">
                                 <rect key="frame" x="33" y="434" width="255" height="61"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
@@ -222,7 +242,7 @@ Click Start to begin the hunt!</string>
                                     <constraint firstAttribute="height" constant="98" id="COA-zd-VKd"/>
                                     <constraint firstAttribute="width" constant="255" id="cW0-0f-1DG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -232,12 +252,16 @@ Click Start to begin the hunt!</string>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="eMo-M0-9vV" firstAttribute="top" secondItem="z8c-NE-PVd" secondAttribute="topMargin" id="0au-ii-jJb"/>
                             <constraint firstItem="2j1-iA-Cad" firstAttribute="top" secondItem="uXF-tU-Xo1" secondAttribute="bottom" constant="14" id="ALa-SK-P7V"/>
+                            <constraint firstItem="Kxc-ya-JYt" firstAttribute="top" secondItem="eMo-M0-9vV" secondAttribute="bottom" id="E3c-nY-DtG"/>
                             <constraint firstItem="2j1-iA-Cad" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="OOI-hr-Ley"/>
                             <constraint firstItem="Cds-SJ-vHY" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="TAC-3p-ymK"/>
                             <constraint firstItem="uXF-tU-Xo1" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="Xmb-qT-33N"/>
                             <constraint firstItem="uXF-tU-Xo1" firstAttribute="top" secondItem="Cds-SJ-vHY" secondAttribute="bottom" constant="60" id="dfe-kD-HxO"/>
+                            <constraint firstItem="eMo-M0-9vV" firstAttribute="leading" secondItem="z8c-NE-PVd" secondAttribute="leadingMargin" constant="-20" id="gyT-6R-Ftj"/>
                             <constraint firstItem="Cds-SJ-vHY" firstAttribute="top" secondItem="sDG-Ue-S3K" secondAttribute="bottom" constant="22" id="qmE-MU-4Kf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eMo-M0-9vV" secondAttribute="trailing" constant="-20" id="tHM-Ss-liG"/>
                             <constraint firstItem="sDG-Ue-S3K" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="z37-uS-9sK"/>
                         </constraints>
                     </view>
@@ -245,6 +269,7 @@ Click Start to begin the hunt!</string>
                     <connections>
                         <outlet property="cheatButton" destination="2j1-iA-Cad" id="HsZ-mk-2QX"/>
                         <outlet property="debugStatusRegion" destination="uXF-tU-Xo1" id="TUo-45-IgN"/>
+                        <outlet property="locationBackImage" destination="eMo-M0-9vV" id="EPd-RU-jvM"/>
                         <outlet property="mapView" destination="Cds-SJ-vHY" id="Ohh-iC-Lam"/>
                         <outlet property="textHintLabel" destination="sDG-Ue-S3K" id="4Xj-I7-rcU"/>
                     </connections>
@@ -265,6 +290,9 @@ Click Start to begin the hunt!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backgroundImageStart" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-iV-aeh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGP-vq-1QR">
                                 <rect key="frame" x="30" y="48" width="262" height="168"/>
                             </imageView>
@@ -296,12 +324,17 @@ Click Start to begin the hunt!</string>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="j2K-iV-aeh" firstAttribute="top" secondItem="GXI-hz-YjO" secondAttribute="topMargin" id="AYG-u9-yuY"/>
+                            <constraint firstItem="j2K-iV-aeh" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="-20" id="F21-sk-dxc"/>
                             <constraint firstItem="mZh-H5-Vsd" firstAttribute="leading" secondItem="pKr-qS-cug" secondAttribute="trailing" constant="10" id="SLQ-sV-NGc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j2K-iV-aeh" secondAttribute="trailing" constant="-20" id="eap-De-yR3"/>
+                            <constraint firstItem="9lF-3z-79M" firstAttribute="top" secondItem="j2K-iV-aeh" secondAttribute="bottom" id="od1-We-2wB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageHintImageView" destination="lGP-vq-1QR" id="j2j-Xh-haD"/>
                         <outlet property="nextClueButton" destination="pKr-qS-cug" id="0Ii-ew-ixQ"/>
+                        <outlet property="photoBackImage" destination="j2K-iV-aeh" id="h4J-7U-9e5"/>
                         <outlet property="restartButton" destination="mZh-H5-Vsd" id="w3V-s6-oqg"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToLocation" unwindAction="unwindToLocationClue:" id="Zjb-yk-N9a"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToWelcome" unwindAction="unwindToWelcome:" id="BDt-Ye-DyN"/>
@@ -313,4 +346,11 @@ Click Start to begin the hunt!</string>
             <point key="canvasLocation" x="1466" y="337"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backImageFirst" width="510" height="170"/>
+        <image name="backgroundImageStart" width="960" height="640"/>
+        <image name="blueGreenBack" width="480" height="183"/>
+        <image name="blueorangeBack" width="555" height="1042"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -19,6 +19,8 @@ FIRDatabaseReference *ref;
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	ref = [[FIRDatabase database] reference];
+    [_passwordInputField setDelegate:self];
+    [_userEmailInputField setDelegate:self];
     
     _signInButton.layer.cornerRadius = 15;
     _signInButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
@@ -27,6 +29,9 @@ FIRDatabaseReference *ref;
     _switchUserButton.layer.cornerRadius = 15;
     _switchUserButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
     _switchUserButton.layer.borderWidth = 3.0f;
+//    _signInImageView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"blocksBackground.jpg"]];
+//    _signInImageView.layer.backgroundColor = [[UIColor clearColor]CGColor];
+    _signInImageView.alpha = 0.5;
     
 }
 
@@ -187,5 +192,10 @@ FIRDatabaseReference *ref;
     }
 }
 
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [_passwordInputField resignFirstResponder];
+    [_userEmailInputField resignFirstResponder];
+    return YES;
+}
 @end
+

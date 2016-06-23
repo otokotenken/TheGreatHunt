@@ -32,6 +32,7 @@ FIRDatabaseReference *dbRef;
     _restartButton.layer.cornerRadius = 15;
     _restartButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
     _restartButton.layer.borderWidth = 3.0f;
+    _photoBackImage.alpha = 0.6;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -122,7 +123,6 @@ FIRDatabaseReference *dbRef;
                                                         [self performSegueWithIdentifier:@"unwindToWelcome" sender: self];
                                                     }];
         [alert addAction:firstAction];
-    alert.view.backgroundColor = [UIColor redColor];
     alert.view.tintColor = [UIColor orangeColor];
 //    alert.view.layer.cornerRadius = 0.5 * [alert.view.bounds.size.width];
         [self presentViewController:alert animated:YES completion:nil];
