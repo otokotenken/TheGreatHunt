@@ -69,7 +69,7 @@
                                     <action selector="signInSignUpButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MA3-ST-GRs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-HW-JIc">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-HW-JIc">
                                 <rect key="frame" x="62" y="292" width="193" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -253,7 +253,7 @@ Click Start to begin the hunt!</string>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Cds-SJ-vHY">
                                 <rect key="frame" x="33" y="140" width="255" height="234"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mc-qW-MDc">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mc-qW-MDc">
                                 <rect key="frame" x="169" y="514" width="104" height="34"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -361,7 +361,7 @@ Click Start to begin the hunt!</string>
                                     <action selector="takePhoto:" destination="YRU-lO-ioB" eventType="touchUpInside" id="eGG-ZF-5Uh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timer Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w1-yA-l0P">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timer Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w1-yA-l0P">
                                 <rect key="frame" x="107" y="489" width="128" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="8fN-Nh-sCm"/>
@@ -371,12 +371,19 @@ Click Start to begin the hunt!</string>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Take a Pic with this Clue!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4c-Zq-sgY">
+                                <rect key="frame" x="20" y="190" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9lF-3z-79M" firstAttribute="top" secondItem="mZh-H5-Vsd" secondAttribute="bottom" constant="20" id="44q-8u-Vdo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2w1-yA-l0P" secondAttribute="trailing" constant="65" id="9hv-sb-Tc0"/>
                             <constraint firstItem="j2K-iV-aeh" firstAttribute="top" secondItem="GXI-hz-YjO" secondAttribute="topMargin" id="AYG-u9-yuY"/>
+                            <constraint firstItem="o4c-Zq-sgY" firstAttribute="trailing" secondItem="GXI-hz-YjO" secondAttribute="trailingMargin" id="BBa-yK-bzE"/>
                             <constraint firstItem="l1a-lE-lGF" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="10" id="Crc-if-vUv"/>
                             <constraint firstItem="9lF-3z-79M" firstAttribute="top" secondItem="pKr-qS-cug" secondAttribute="bottom" constant="20" id="EHj-JM-cLu"/>
                             <constraint firstItem="j2K-iV-aeh" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="-20" id="F21-sk-dxc"/>
@@ -384,6 +391,7 @@ Click Start to begin the hunt!</string>
                             <constraint firstItem="shz-Pq-Pvm" firstAttribute="trailing" secondItem="GXI-hz-YjO" secondAttribute="trailingMargin" id="LEG-o1-4Yd"/>
                             <constraint firstItem="mZh-H5-Vsd" firstAttribute="leading" secondItem="pKr-qS-cug" secondAttribute="trailing" constant="10" id="SLQ-sV-NGc"/>
                             <constraint firstItem="lGP-vq-1QR" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="9" id="WSg-3Z-c0u"/>
+                            <constraint firstItem="o4c-Zq-sgY" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" id="YNh-9A-0KZ"/>
                             <constraint firstItem="pKr-qS-cug" firstAttribute="top" secondItem="l1a-lE-lGF" secondAttribute="bottom" constant="26" id="cHG-ky-GbF"/>
                             <constraint firstItem="lGP-vq-1QR" firstAttribute="top" secondItem="ikb-OY-kmn" secondAttribute="bottom" id="dCg-PE-mvX"/>
                             <constraint firstItem="2tP-dv-hJx" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" id="e8T-Pl-hN3"/>
@@ -413,7 +421,7 @@ Click Start to begin the hunt!</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLG-sG-bKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hmh-tG-Bwb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1466" y="337"/>
+            <point key="canvasLocation" x="1434" y="327"/>
         </scene>
     </scenes>
     <resources>
