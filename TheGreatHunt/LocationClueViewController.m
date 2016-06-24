@@ -30,7 +30,6 @@ Clue *currentClue;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _cheatButton.layer.cornerRadius = 15;
     _cheatButton.layer.borderColor = [[UIColor colorWithRed:249.0/255.0f green:190.0/255.0f blue:2.0/255.0f  alpha:1.0]CGColor];
     _cheatButton.layer.borderWidth = 3.0f;
@@ -57,6 +56,9 @@ Clue *currentClue;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [[Game getInstance] runTimer];
+    _timerLabel.text = [Game getInstance].gameTimer;
+    NSLog(@"%@____________logging the timer",[Game getInstance].gameTimer);
 	currentClue = [self getCurrentClue];
 	
 	_textHintLabel.text = [currentClue textHint];
@@ -87,6 +89,8 @@ Clue *currentClue;
 	return nil;
 
 }
+
+
 
 - (void)clueRegionSetup{
     //commented out lines with long and lat are the clue long and lat. 
@@ -157,6 +161,7 @@ Clue *currentClue;
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [[Game getInstance] stopTimer];
     
 }
 

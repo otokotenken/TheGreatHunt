@@ -69,7 +69,7 @@
                                     <action selector="signInSignUpButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MA3-ST-GRs"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-HW-JIc">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDy-HW-JIc">
                                 <rect key="frame" x="62" y="292" width="193" height="39"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -87,7 +87,7 @@
                                     <constraint firstAttribute="height" constant="34" id="iUy-oV-d8J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
-                                <state key="normal" title="Switch Users">
+                                <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -219,15 +219,19 @@ Click Start to begin the hunt!</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="blueorangeBack" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-M0-9vV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="status label status label status label status label " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXF-tU-Xo1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="status label status label status label status label " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXF-tU-Xo1">
                                 <rect key="frame" x="33" y="434" width="255" height="61"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j1-iA-Cad">
-                                <rect key="frame" x="96" y="509" width="128" height="34"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j1-iA-Cad">
+                                <rect key="frame" x="2" y="514" width="128" height="34"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="7WW-Jj-by9"/>
+                                    <constraint firstAttribute="height" constant="34" id="Tfn-2U-AWJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
                                 <state key="normal" title="Cheat Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,18 +253,32 @@ Click Start to begin the hunt!</string>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Cds-SJ-vHY">
                                 <rect key="frame" x="33" y="140" width="255" height="234"/>
                             </mapView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mc-qW-MDc">
+                                <rect key="frame" x="169" y="514" width="104" height="34"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="0xJ-dL-kou"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="eMo-M0-9vV" firstAttribute="top" secondItem="z8c-NE-PVd" secondAttribute="topMargin" id="0au-ii-jJb"/>
-                            <constraint firstItem="2j1-iA-Cad" firstAttribute="top" secondItem="uXF-tU-Xo1" secondAttribute="bottom" constant="14" id="ALa-SK-P7V"/>
+                            <constraint firstItem="8mc-qW-MDc" firstAttribute="top" secondItem="uXF-tU-Xo1" secondAttribute="bottom" constant="19" id="5qw-2K-Bgy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8mc-qW-MDc" secondAttribute="trailing" constant="27" id="6fa-H6-xtk"/>
+                            <constraint firstItem="eMo-M0-9vV" firstAttribute="leading" secondItem="2j1-iA-Cad" secondAttribute="trailing" constant="-130" id="7ab-o2-qkt"/>
                             <constraint firstItem="Kxc-ya-JYt" firstAttribute="top" secondItem="eMo-M0-9vV" secondAttribute="bottom" id="E3c-nY-DtG"/>
-                            <constraint firstItem="2j1-iA-Cad" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="OOI-hr-Ley"/>
                             <constraint firstItem="Cds-SJ-vHY" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="TAC-3p-ymK"/>
                             <constraint firstItem="uXF-tU-Xo1" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="Xmb-qT-33N"/>
+                            <constraint firstItem="8mc-qW-MDc" firstAttribute="leading" secondItem="2j1-iA-Cad" secondAttribute="trailing" constant="39" id="c0Q-Pb-dWR"/>
                             <constraint firstItem="uXF-tU-Xo1" firstAttribute="top" secondItem="Cds-SJ-vHY" secondAttribute="bottom" constant="60" id="dfe-kD-HxO"/>
                             <constraint firstItem="eMo-M0-9vV" firstAttribute="leading" secondItem="z8c-NE-PVd" secondAttribute="leadingMargin" constant="-20" id="gyT-6R-Ftj"/>
+                            <constraint firstItem="Kxc-ya-JYt" firstAttribute="top" secondItem="8mc-qW-MDc" secondAttribute="bottom" constant="20" id="nnk-mh-Dm2"/>
                             <constraint firstItem="Cds-SJ-vHY" firstAttribute="top" secondItem="sDG-Ue-S3K" secondAttribute="bottom" constant="22" id="qmE-MU-4Kf"/>
+                            <constraint firstItem="2j1-iA-Cad" firstAttribute="top" secondItem="eMo-M0-9vV" secondAttribute="bottom" constant="-54" id="tEb-1W-3i7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eMo-M0-9vV" secondAttribute="trailing" constant="-20" id="tHM-Ss-liG"/>
                             <constraint firstItem="sDG-Ue-S3K" firstAttribute="centerX" secondItem="z8c-NE-PVd" secondAttribute="centerX" id="z37-uS-9sK"/>
                         </constraints>
@@ -272,6 +290,7 @@ Click Start to begin the hunt!</string>
                         <outlet property="locationBackImage" destination="eMo-M0-9vV" id="EPd-RU-jvM"/>
                         <outlet property="mapView" destination="Cds-SJ-vHY" id="Ohh-iC-Lam"/>
                         <outlet property="textHintLabel" destination="sDG-Ue-S3K" id="4Xj-I7-rcU"/>
+                        <outlet property="timerLabel" destination="8mc-qW-MDc" id="b6F-6C-6gg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuF-hS-rdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -333,7 +352,7 @@ Click Start to begin the hunt!</string>
                                     <action selector="choosePhoto:" destination="YRU-lO-ioB" eventType="touchUpInside" id="dpl-oA-7ZN"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-lE-lGF">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1a-lE-lGF">
                                 <rect key="frame" x="29" y="462" width="77" height="30"/>
                                 <state key="normal" title="Take Photo">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -342,23 +361,44 @@ Click Start to begin the hunt!</string>
                                     <action selector="takePhoto:" destination="YRU-lO-ioB" eventType="touchUpInside" id="eGG-ZF-5Uh"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Timer Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2w1-yA-l0P">
+                                <rect key="frame" x="107" y="489" width="128" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8fN-Nh-sCm"/>
+                                    <constraint firstAttribute="width" constant="128" id="Cx0-az-MeZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Take a Pic with this Clue!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4c-Zq-sgY">
+                                <rect key="frame" x="20" y="190" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9lF-3z-79M" firstAttribute="top" secondItem="mZh-H5-Vsd" secondAttribute="bottom" constant="20" id="44q-8u-Vdo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2w1-yA-l0P" secondAttribute="trailing" constant="65" id="9hv-sb-Tc0"/>
                             <constraint firstItem="j2K-iV-aeh" firstAttribute="top" secondItem="GXI-hz-YjO" secondAttribute="topMargin" id="AYG-u9-yuY"/>
+                            <constraint firstItem="o4c-Zq-sgY" firstAttribute="trailing" secondItem="GXI-hz-YjO" secondAttribute="trailingMargin" id="BBa-yK-bzE"/>
                             <constraint firstItem="l1a-lE-lGF" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="10" id="Crc-if-vUv"/>
                             <constraint firstItem="9lF-3z-79M" firstAttribute="top" secondItem="pKr-qS-cug" secondAttribute="bottom" constant="20" id="EHj-JM-cLu"/>
                             <constraint firstItem="j2K-iV-aeh" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="-20" id="F21-sk-dxc"/>
+                            <constraint firstItem="2w1-yA-l0P" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="87" id="Hsi-U8-B1P"/>
                             <constraint firstItem="shz-Pq-Pvm" firstAttribute="trailing" secondItem="GXI-hz-YjO" secondAttribute="trailingMargin" id="LEG-o1-4Yd"/>
                             <constraint firstItem="mZh-H5-Vsd" firstAttribute="leading" secondItem="pKr-qS-cug" secondAttribute="trailing" constant="10" id="SLQ-sV-NGc"/>
                             <constraint firstItem="lGP-vq-1QR" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" constant="9" id="WSg-3Z-c0u"/>
+                            <constraint firstItem="o4c-Zq-sgY" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" id="YNh-9A-0KZ"/>
                             <constraint firstItem="pKr-qS-cug" firstAttribute="top" secondItem="l1a-lE-lGF" secondAttribute="bottom" constant="26" id="cHG-ky-GbF"/>
                             <constraint firstItem="lGP-vq-1QR" firstAttribute="top" secondItem="ikb-OY-kmn" secondAttribute="bottom" id="dCg-PE-mvX"/>
                             <constraint firstItem="2tP-dv-hJx" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" id="e8T-Pl-hN3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="j2K-iV-aeh" secondAttribute="trailing" constant="-20" id="eap-De-yR3"/>
                             <constraint firstItem="pKr-qS-cug" firstAttribute="leading" secondItem="GXI-hz-YjO" secondAttribute="leadingMargin" id="g9t-4T-iTx"/>
                             <constraint firstItem="2tP-dv-hJx" firstAttribute="trailing" secondItem="GXI-hz-YjO" secondAttribute="trailingMargin" id="jHr-OQ-XEF"/>
+                            <constraint firstItem="pKr-qS-cug" firstAttribute="top" secondItem="2w1-yA-l0P" secondAttribute="bottom" constant="8" id="lZQ-SZ-JSj"/>
                             <constraint firstItem="9lF-3z-79M" firstAttribute="top" secondItem="j2K-iV-aeh" secondAttribute="bottom" id="od1-We-2wB"/>
                             <constraint firstItem="mZh-H5-Vsd" firstAttribute="top" secondItem="shz-Pq-Pvm" secondAttribute="bottom" constant="26" id="tFg-Jw-neG"/>
                             <constraint firstItem="mZh-H5-Vsd" firstAttribute="trailing" secondItem="GXI-hz-YjO" secondAttribute="trailingMargin" id="tM1-C9-Qlt"/>
@@ -373,6 +413,7 @@ Click Start to begin the hunt!</string>
                         <outlet property="photoBackImage" destination="j2K-iV-aeh" id="h4J-7U-9e5"/>
                         <outlet property="restartButton" destination="mZh-H5-Vsd" id="w3V-s6-oqg"/>
                         <outlet property="takePhotoButton" destination="l1a-lE-lGF" id="kIE-lK-iyS"/>
+                        <outlet property="timerLabel" destination="2w1-yA-l0P" id="w2s-dz-INe"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToLocation" unwindAction="unwindToLocationClue:" id="Zjb-yk-N9a"/>
                         <segue destination="hmh-tG-Bwb" kind="unwind" identifier="unwindToWelcome" unwindAction="unwindToWelcome:" id="BDt-Ye-DyN"/>
                     </connections>
@@ -380,7 +421,7 @@ Click Start to begin the hunt!</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLG-sG-bKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="hmh-tG-Bwb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1466" y="337"/>
+            <point key="canvasLocation" x="1434" y="327"/>
         </scene>
     </scenes>
     <resources>

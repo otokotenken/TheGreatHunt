@@ -57,6 +57,8 @@ UIImagePickerController *appImagePicker;
 
 - (void)viewDidAppear:(BOOL)animated {
 	_imageHintImageView.image = [self getCurrentClue].imageHint;
+    [[Game getInstance] runTimer];
+    _timerLabel.text = [Game getInstance].gameTimer;
 }
 
 -(Clue *)getCurrentClue {
@@ -77,6 +79,7 @@ UIImagePickerController *appImagePicker;
 
 - (IBAction)determineActionButton:(id)sender {
 	if([self moveToNextClue]) {
+        [[Game getInstance] stopTimer];
 		[self performSegueWithIdentifier:@"unwindToLocation" sender:sender];
 	}
 	else {
@@ -86,6 +89,8 @@ UIImagePickerController *appImagePicker;
 }
 - (IBAction)restartGameButton:(id)sender {
 	[self moveToFirstClue];
+    [Game getInstance].gameTimer= @"00:00:00";
+    [[Game getInstance] stopTimer];
 	[self performSegueWithIdentifier:@"unwindToWelcome" sender:sender];
 }
 
@@ -95,11 +100,12 @@ UIImagePickerController *appImagePicker;
 	[Game getInstance].currentClue = firstClue.name;
 	
 	[self updateCurrentClueInFirebaseWithName:firstClue.name];
+    [self updateGameTimerInFirebaseWithName:[[Game getInstance] gameTimer]];
 }
 
 -(BOOL)moveToNextClue {
 	Clue *current = [self getCurrentClue];
-	
+	[[Game getInstance] stopTimer];
 	NSUInteger index = [[Game getInstance].cluesArray indexOfObject:current];
 	
 	if(index == [[Game getInstance].cluesArray count]-1) {
@@ -130,23 +136,43 @@ UIImagePickerController *appImagePicker;
 		 }];
 }
 
+-(void)updateGameTimerInFirebaseWithName:(NSString *) newGameTimer {
+    //update in firebase
+    [dbRef updateChildValues:@{[NSString stringWithFormat:@"%@/gameTimer", [Game getInstance].name]:newGameTimer}
+         withCompletionBlock:^(NSError *error, FIRDatabaseReference *ref) {
+             if (error) {
+                 NSLog(@"Data could not be saved: %@", error);
+             } else {
+                 NSLog(@"Data saved successfully.");
+             }
+         }];
+}
+
 
 - (void)alertUserHasWon{
-   
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Win" message:@"Your the Best!!!!" preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Play Again?"
-                                                    style:UIAlertActionStyleDefault
-                                                    handler:^(UIAlertAction * action) {
-                                                        [self moveToFirstClue];
-//                                                        [self updateCurrentClueInFirebaseWithName:firstClue.name];
-                                                        [self performSegueWithIdentifier:@"unwindToWelcome" sender: self];
-                                                    }];
-        [alert addAction:firstAction];
-    alert.view.tintColor = [UIColor orangeColor];
-//    alert.view.layer.cornerRadius = 0.5 * [alert.view.bounds.size.width];
-        [self presentViewController:alert animated:YES completion:nil];
     
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Win" message:@"Your the Best!!!!" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Play Again?"
+                                                          style:UIAlertActionStyleDefault
+                                                        handler:^(UIAlertAction * action) {
+                                                            [self moveToFirstClue];
+                                                            //                                                        [self updateCurrentClueInFirebaseWithName:firstClue.name];
+                                                            [self performSegueWithIdentifier:@"unwindToWelcome" sender: self];
+                                                        }];
+    UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Sign Out" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        NSError *error;
+        [[FIRAuth auth] signOut:&error];
+        if (!error) {
+            NSLog(@"signed out  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        } else {}
+        
+    }];
+    [alert addAction:firstAction];
+    [alert addAction:secondAction];
+    alert.view.tintColor = [UIColor orangeColor];
+    //    alert.view.layer.cornerRadius = 0.5 * [alert.view.bounds.size.width];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)takePhoto:(id)sender {
