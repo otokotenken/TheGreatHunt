@@ -15,8 +15,13 @@
 @property(nonatomic, strong) NSArray *cluesArray;
 @property(nonatomic, strong) NSString *currentClue;
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *gameTimer;
+@property (strong, nonatomic) NSTimer *timer;
 
 +(instancetype)getInstance;
+
+-(void)runTimer;
+-(void)stopTimer;
 
 
 @end

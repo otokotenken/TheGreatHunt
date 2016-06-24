@@ -57,6 +57,7 @@ Clue *currentClue;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [[Game getInstance] runTimer];
 	currentClue = [self getCurrentClue];
 	
 	_textHintLabel.text = [currentClue textHint];
@@ -161,6 +162,7 @@ Clue *currentClue;
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [[Game getInstance] stopTimer];
     
 }
 
