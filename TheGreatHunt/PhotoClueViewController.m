@@ -39,6 +39,7 @@ UIImagePickerController *appImagePicker;
         [myAlertView show];
         appImagePicker = [self createAppImagePicker];
     } else {
+        _takePhotoButton.hidden = NO;
         appImagePicker = [self createAppImagePicker];
     }
     
