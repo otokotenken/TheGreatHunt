@@ -48,7 +48,7 @@
     
     formatter.dateFormat = @"hh";
     int hours = [[formatter stringFromDate:timeDate] intValue];
-    formatter.dateFormat = @"hh";
+    formatter.dateFormat = @"mm";
     int minutes = [[formatter stringFromDate:timeDate] intValue];
     formatter.dateFormat = @"ss";
     int seconds = [[formatter stringFromDate:timeDate] intValue];
@@ -60,9 +60,11 @@
     int updatedHours = updatedSeconds/3600;
     int updatedMinutes = updatedSeconds/60 % 60;
     _gameTimer = [NSString stringWithFormat:@"%.2d:%.2d:%.2d", updatedHours, updatedMinutes, updatedSeconds];
-    NSLog(@"%@",_gameTimer);
+//    NSLog(@"%@",_gameTimer);
     
 }
+
+
 
 
 

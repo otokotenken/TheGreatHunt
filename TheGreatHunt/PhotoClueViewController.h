@@ -12,5 +12,6 @@
 @interface PhotoClueViewController : UIViewController <GameController, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoBackImage;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 @end

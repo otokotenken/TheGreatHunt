@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSString *gameTimer;
 @property (strong, nonatomic) NSTimer *timer;
 
+
 +(instancetype)getInstance;
 
 -(void)runTimer;

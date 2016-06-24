@@ -57,6 +57,7 @@ UIImagePickerController *appImagePicker;
 - (void)viewDidAppear:(BOOL)animated {
 	_imageHintImageView.image = [self getCurrentClue].imageHint;
     [[Game getInstance] runTimer];
+    _timerLabel.text = [Game getInstance].gameTimer;
 }
 
 -(Clue *)getCurrentClue {

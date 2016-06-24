@@ -19,4 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *textHintLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *locationBackImage;
 
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+
+
 @end
