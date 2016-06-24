@@ -122,13 +122,31 @@ FIRDatabaseReference *ref;
                              NSLog(@"%@, %@" ,user.description, error);
                              [self decideSignInOrSignUp: error];
                          }];
-}
 
+}
+- (IBAction)signOutSwitchUser:(id)sender {
+    [[FIRAuth auth] signInWithEmail:_userEmailInputField.text
+                           password:_passwordInputField.text
+                         completion:^(FIRUser *user, NSError *error) {
+                             NSLog(@"%@, %@" ,user.description, error);
+                             [self decideSignInOrSignUp: error];
+                         }];
+}
+-(void)signUpUser:(NSString*)userName password:(NSString*)password {
+    [[FIRAuth auth]
+     createUserWithEmail:userName
+     password: password
+     completion:^(FIRUser *_Nullable user,
+                  NSError *_Nullable error) {
+         NSLog(@"%@, %@" ,user, error);
+         [self decideSignInOrSignUp:error];
+     }];
+}
 -(void)decideSignInOrSignUp :(NSError *)error {
     if(error){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not Registered Yet?"
                                                                        message:@" Would You Like To Sign Up? "
-                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+                                                                preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Sign Up"
                                                               style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                                                   if (error.code == 17007){
@@ -141,7 +159,9 @@ FIRDatabaseReference *ref;
                                                                       _errorDisplayLabel.text = @"Please enter a 6 character password.";
                                                                       NSLog(@"weak password");
                                                                   } else {
-                                                                      [self signUpUser];}
+                                                                      NSString *email = [[[alert textFields]firstObject]text];
+                                                                      NSString *password = [[[alert textFields]firstObject]text];
+                                                                      [self signUpUser:email password:password];}
                                                               }];
         
         NSMutableAttributedString *hogan = [[NSMutableAttributedString alloc] initWithString:@"\n Not Registered Yet?\n\n"];
@@ -165,30 +185,22 @@ FIRDatabaseReference *ref;
         [alert addAction:firstAction];
         [alert addAction:secondAction];
 //        alert.view.backgroundColor = [UIColor blueColor];
+        
+        
+        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"Username";
+        }];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"Password";
+            textField.secureTextEntry = YES;
+        }];
+        
         alert.view.tintColor = [UIColor purpleColor];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
 		[self retrieveGameDataFromDBRef:ref];
         [self performSegueWithIdentifier:@"toWelcome" sender:nil];
         
-    }
-}
--(void)signUpUser {
-    [[FIRAuth auth]
-     createUserWithEmail:_userEmailInputField.text
-     password:_passwordInputField.text
-     completion:^(FIRUser *_Nullable user,
-                  NSError *_Nullable error) {
-         NSLog(@"%@, %@" ,user, error);
-     }];
-}
-- (IBAction)signOutSwitchUser:(id)sender {
-    NSError *error;
-    [[FIRAuth auth] signOut:&error];
-    if (!error) {
-        NSLog(@"signed out  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-    } else {
-        NSLog(@"%@", error);
     }
 }
 
