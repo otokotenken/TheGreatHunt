@@ -17,6 +17,7 @@
 //reference of current game
 
 @property(strong, nonatomic) NSString *userName;
+@property(strong, nonatomic) NSString *sanitizedUserName;
 @property(strong, nonatomic) NSString *userToken;
 @property(strong, nonatomic) NSString *userCurrentGame;
 @property(strong, nonatomic) NSString *userGameReference;

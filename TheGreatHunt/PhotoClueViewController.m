@@ -7,6 +7,7 @@
 //
 
 #import "PhotoClueViewController.h"
+#import "User.h"
 @import Firebase;
 
 @interface PhotoClueViewController ()
@@ -119,7 +120,7 @@ UIImagePickerController *appImagePicker;
 
 -(void)updateCurrentClueInFirebaseWithName:(NSString *) newClueName {
 	//update in firebase
-	[dbRef updateChildValues:@{[NSString stringWithFormat:@"%@/currentClue", [Game getInstance].name]: newClueName}
+	[dbRef updateChildValues:@{[NSString stringWithFormat:@"%@/currentClue", [User getInstance].sanitizedUserName]: newClueName}
 		 withCompletionBlock:^(NSError *error, FIRDatabaseReference *ref) {
 			 if (error) {
 				 NSLog(@"Data could not be saved: %@", error);
