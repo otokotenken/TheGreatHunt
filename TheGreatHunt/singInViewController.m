@@ -48,15 +48,16 @@ FIRDatabaseReference *ref;
 
 -(void)processGameDataObjects:(NSDictionary *)data {
 	
-	NSDictionary *userObject = [self getCurrentUserObjectForEmail:_userEmailInputField.text fromData:data];
-	
-	//now that we have the user instance info, set up the game object appropriately
-	[self configureGameWithData:userObject andName:data[userObject[@"currentGame"]]];
-	
-	[Game getInstance].cluesArray = [self buildCluesArrayForCurrentGame:userObject[@"currentGame"] fromData:data];
+	[self getCurrentUserObjectForEmail:_userEmailInputField.text fromData:data andOnComplete:^(NSDictionary *userObject, NSDictionary *data){
+		//now that we have the user instance info, set up the game object appropriately
+		[self configureGameWithData:userObject andName:data[userObject[@"currentGame"]]];
+		
+		[Game getInstance].cluesArray = [self buildCluesArrayForCurrentGame:userObject[@"currentGame"] fromData:data];
+		[self performSegueWithIdentifier:@"toWelcome" sender:nil];
+	}];
 }
 
--(NSDictionary *)getCurrentUserObjectForEmail:(NSString *)userEmail fromData:(NSDictionary *)data {
+-(void)getCurrentUserObjectForEmail:(NSString *)userEmail fromData:(NSDictionary *)data andOnComplete:(void(^)(NSDictionary *, NSDictionary *))callbackBlock {
 	NSMutableString *sanitizedUserEmail = [userEmail mutableCopy];
 	
 	//firebase won't accept '/' '.' '#' '$' '[' or ']' in keys. these can be valid in emails.
@@ -78,13 +79,14 @@ FIRDatabaseReference *ref;
 		
 		userObject = @{[User getInstance].sanitizedUserName: @{@"currentGame": @"game1", @"currentClue": @"clue1", @"gameTimer": @"00:00:00"}};
 		
-		[ref updateChildValues:userObject];
+		[ref updateChildValues:userObject withCompletionBlock:^(NSError * err, FIRDatabaseReference *ref){
+			callbackBlock(userObject[[User getInstance].sanitizedUserName], data);
+		}];
 	}
 	else {
 		NSLog(@"user object for %@ exists, using it.", [User getInstance].sanitizedUserName);
+		callbackBlock(userObject, data);
 	}
-	
-	return userObject;
 }
 
 -(NSArray *)buildCluesArrayForCurrentGame:(NSString *)gameId fromData:(NSDictionary *)data {
@@ -105,50 +107,6 @@ FIRDatabaseReference *ref;
 	[Game getInstance].currentClue = userGameData[@"currentClue"];
 	//[Game getInstance].gameTimer = userGameData[@"currentClue"];
 }
-
-//format data to NSObject
-/*-(void)formatJSON: (NSDictionary *)dict {
-    NSMutableArray *unfilteredCluesArray = [[NSMutableArray alloc]init];
-    NSMutableArray *unsortedClueArray;
-    NSArray *sortedClueArray;
-    
-    //loop in first layer of dictionary
-    for (id dictKey in dict){
-        NSDictionary *clueOrMaybeGameDict = dict[dictKey];
-        //filter Game and Clue, game saved to Singleton, Clue saved to Clues Array.
-        if ([dictKey rangeOfString:@"game"].location != NSNotFound){
-            [self formatGameWith:clueOrMaybeGameDict];
-        } else if ([dictKey rangeOfString:@"clue"].location != NSNotFound){
-            Clue *tempClue = [self formatClueDictToOjc:clueOrMaybeGameDict];
-            [unfilteredCluesArray addObject:tempClue];
-            unsortedClueArray = [self filterArray:unfilteredCluesArray];
-            sortedClueArray = [self sortArray:unsortedClueArray];
-        }
-    }
-    [Game getInstance].cluesArray = sortedClueArray;
-}
-
-//formate game object
--(Game *)formatGameWith: (NSDictionary *)oneDictionary{
-    [Game getInstance].name = oneDictionary[@"name"];
-    [Game getInstance].currentClue = oneDictionary[@"currentClue"];
-    return [Game getInstance];
-}
-
-// filer Clue Array by gameRef
--(NSMutableArray *)filterArray: (NSMutableArray *)oneArray{
-    NSMutableArray *tempArray = [[NSMutableArray alloc]init];
-    //filter clue array with gameRef
-    for (id obj in oneArray){
-        if ([[obj gameRef] isEqualToString:@"game1"]){
-            [tempArray addObject:obj];
-        }else{
-            NSLog(@"++++++++++++++++++++++++++++++++++++++++++++++++++++++++alert!Does not find any game1 clue in the array");
-        }
-    }
-    return tempArray;
-}*/
-
 
 //Sort Clue Array by order
 -(NSArray *)sortArray: (NSMutableArray *)oneArray{
@@ -210,7 +168,8 @@ FIRDatabaseReference *ref;
                                                                       NSLog(@"weak password");
                                                                   } else {
                                                                       NSString *email = [[[alert textFields]firstObject]text];
-                                                                      NSString *password = [[[alert textFields]firstObject]text];
+                                                                      NSString *password = [[[alert textFields] objectAtIndex:1]text];
+																	  NSLog(@"--------------------using password '%@'", password);
                                                                       [self signUpUser:email password:password];}
                                                               }];
         
@@ -250,7 +209,7 @@ FIRDatabaseReference *ref;
     } else {
 		[User getInstance].userName = _userEmailInputField.text;
 		[self retrieveGameDataFromDBRef:ref];
-        [self performSegueWithIdentifier:@"toWelcome" sender:nil];
+        //[self performSegueWithIdentifier:@"toWelcome" sender:nil];
     }
 }
 
