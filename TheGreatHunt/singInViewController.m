@@ -172,80 +172,85 @@ FIRDatabaseReference *ref;
                              NSLog(@"%@, %@" ,user.description, error);
                              [self decideSignInOrSignUp: error];
                          }];
-}
 
--(void)displayRegistrationAlertForError:(NSError *)error {
-	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not Registered Yet?"
-																   message:@" Would You Like To Sign Up? "
-															preferredStyle:UIAlertControllerStyleActionSheet];
-	UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Sign Up"
-														  style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-															  if (error.code == 17007){
-																  _errorDisplayLabel.text = @"This email is already in use.";
-																  NSLog(@"email in use");
-															  } else if (error.code == 17009){
-																  _errorDisplayLabel.text = @"Incorrect Password";
-																  NSLog(@"wrong password");
-															  } else if (error.code == 17026){
-																  _errorDisplayLabel.text = @"Please enter a 6 character password.";
-																  NSLog(@"weak password");
-															  } else {
-																  [self signUpUser];}
-														  }];
-	
-	NSMutableAttributedString *hogan = [[NSMutableAttributedString alloc] initWithString:@"\n Not Registered Yet?\n\n"];
-	[hogan addAttribute:NSFontAttributeName
-				  value:[UIFont systemFontOfSize:34.0]
-				  range:NSMakeRange(1, 21)];
-	[alert setValue:hogan forKey:@"attributedTitle"];
-	
-	NSMutableAttributedString *messageChange = [[NSMutableAttributedString alloc] initWithString:@"Would You Like to Sign Up? "];
-	[messageChange addAttribute:NSFontAttributeName
-						  value:[UIFont systemFontOfSize:18.0]
-						  range:NSMakeRange(0, 26)];
-	[alert setValue:messageChange forKey:@"attributedMessage"];
-	
-	UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Cancel"
-														   style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-															   _userEmailInputField.text = @"";
-															   _passwordInputField.text = @"";
-														   }];
-	
-	[alert addAction:firstAction];
-	[alert addAction:secondAction];
-	//        alert.view.backgroundColor = [UIColor blueColor];
-	alert.view.tintColor = [UIColor purpleColor];
-	[self presentViewController:alert animated:YES completion:nil];
 }
-
--(void)decideSignInOrSignUp:(NSError *)error {
+- (IBAction)signOutSwitchUser:(id)sender {
+    [[FIRAuth auth] signInWithEmail:_userEmailInputField.text
+                           password:_passwordInputField.text
+                         completion:^(FIRUser *user, NSError *error) {
+                             NSLog(@"%@, %@" ,user.description, error);
+                             [self decideSignInOrSignUp: error];
+                         }];
+}
+-(void)signUpUser:(NSString*)userName password:(NSString*)password {
+    [[FIRAuth auth]
+     createUserWithEmail:userName
+     password: password
+     completion:^(FIRUser *_Nullable user,
+                  NSError *_Nullable error) {
+         NSLog(@"%@, %@" ,user, error);
+         [self decideSignInOrSignUp:error];
+     }];
+}
+-(void)decideSignInOrSignUp :(NSError *)error {
     if(error){
-		[self displayRegistrationAlertForError:error];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not Registered Yet?"
+                                                                       message:@" Would You Like To Sign Up? "
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Sign Up"
+                                                              style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                  if (error.code == 17007){
+                                                                      _errorDisplayLabel.text = @"This email is already in use.";
+                                                                      NSLog(@"email in use");
+                                                                  } else if (error.code == 17009){
+                                                                      _errorDisplayLabel.text = @"Incorrect Password";
+                                                                      NSLog(@"wrong password");
+                                                                  } else if (error.code == 17026){
+                                                                      _errorDisplayLabel.text = @"Please enter a 6 character password.";
+                                                                      NSLog(@"weak password");
+                                                                  } else {
+                                                                      NSString *email = [[[alert textFields]firstObject]text];
+                                                                      NSString *password = [[[alert textFields]firstObject]text];
+                                                                      [self signUpUser:email password:password];}
+                                                              }];
+        
+        NSMutableAttributedString *hogan = [[NSMutableAttributedString alloc] initWithString:@"\n Not Registered Yet?\n\n"];
+        [hogan addAttribute:NSFontAttributeName
+                      value:[UIFont systemFontOfSize:34.0]
+                      range:NSMakeRange(1, 21)];
+        [alert setValue:hogan forKey:@"attributedTitle"];
+        
+        NSMutableAttributedString *messageChange = [[NSMutableAttributedString alloc] initWithString:@"Would You Like to Sign Up? "];
+        [messageChange addAttribute:NSFontAttributeName
+                      value:[UIFont systemFontOfSize:18.0]
+                      range:NSMakeRange(0, 26)];
+        [alert setValue:messageChange forKey:@"attributedMessage"];
+        
+        UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                               style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                                   _userEmailInputField.text = @"";
+                                                                   _passwordInputField.text = @"";
+                                                               }];
+        
+        [alert addAction:firstAction];
+        [alert addAction:secondAction];
+//        alert.view.backgroundColor = [UIColor blueColor];
+        
+        
+        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"Username";
+        }];
+        [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"Password";
+            textField.secureTextEntry = YES;
+        }];
+        
+        alert.view.tintColor = [UIColor purpleColor];
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
 		[User getInstance].userName = _userEmailInputField.text;
 		[self retrieveGameDataFromDBRef:ref];
         [self performSegueWithIdentifier:@"toWelcome" sender:nil];
-    }
-}
-
--(void)signUpUser {
-    [[FIRAuth auth]
-     createUserWithEmail:_userEmailInputField.text
-     password:_passwordInputField.text
-     completion:^(FIRUser *_Nullable user,
-                  NSError *_Nullable error) {
-		 [User getInstance].userName = _userEmailInputField.text;
-         NSLog(@"%@, %@" ,user, error);
-     }];
-}
-
-- (IBAction)signOutSwitchUser:(id)sender {
-    NSError *error;
-    [[FIRAuth auth] signOut:&error];
-    if (!error) {
-        NSLog(@"signed out");
-    } else {
-        NSLog(@"%@", error);
     }
 }
 
